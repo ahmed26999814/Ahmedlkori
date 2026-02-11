@@ -26,23 +26,25 @@ export default function ReviewsPage() {
     )
   );
 
-  const filtered = React.useMemo(() => {
+  const telegramFiltered = React.useMemo(() => {
     const q = query.toLowerCase();
-    if (tab === "telegram") {
-      return telegramReviews.filter(
-        (item) =>
-          (!subject || item.subject === subject) &&
-          (item.title.toLowerCase().includes(q) ||
-            item.subject.toLowerCase().includes(q))
-      );
-    }
+    return telegramReviews.filter(
+      (item) =>
+        (!subject || item.subject === subject) &&
+        (item.title.toLowerCase().includes(q) ||
+          item.subject.toLowerCase().includes(q))
+    );
+  }, [telegramReviews, query, subject]);
+
+  const whatsappFiltered = React.useMemo(() => {
+    const q = query.toLowerCase();
     return whatsappGroups.filter(
       (item) =>
         (!subject || item.subject === subject) &&
         (item.title.toLowerCase().includes(q) ||
           item.subject.toLowerCase().includes(q))
     );
-  }, [tab, telegramReviews, whatsappGroups, query, subject]);
+  }, [whatsappGroups, query, subject]);
 
   return (
     <div className="space-y-8">
@@ -95,10 +97,10 @@ export default function ReviewsPage() {
       ) : (
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {tab === "telegram"
-            ? filtered.map((item) => (
+            ? telegramFiltered.map((item) => (
                 <ReviewCard key={item.title} {...item} type="Telegram" />
               ))
-            : filtered.map((item) => (
+            : whatsappFiltered.map((item) => (
                 <ReviewCard
                   key={item.title}
                   title={item.title}
