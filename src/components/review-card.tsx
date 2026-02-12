@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Copy, ExternalLink, QrCode } from "lucide-react";
@@ -25,7 +25,7 @@ export function ReviewCard({
 
   const copy = async () => {
     await navigator.clipboard.writeText(url);
-    toast.success("?? ??? ??????");
+    toast.success("تم نسخ الرابط");
   };
 
   return (
@@ -49,11 +49,11 @@ export function ReviewCard({
       <div className="flex flex-wrap items-center gap-2">
         <Button asChild variant="secondary" size="sm">
           <a href={url} target="_blank" rel="noreferrer">
-            ??? ?????? <ExternalLink size={14} />
+            فتح الرابط <ExternalLink size={14} />
           </a>
         </Button>
         <Button variant="ghost" size="sm" onClick={copy}>
-          ??? <Copy size={14} />
+          نسخ <Copy size={14} />
         </Button>
         <Button
           variant="ghost"

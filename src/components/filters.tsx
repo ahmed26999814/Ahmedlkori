@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Filter } from "lucide-react";
@@ -27,13 +27,13 @@ export function FilterBar({
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2 text-sm text-white/70">
           <Filter size={16} />
-          ????? ??????
+          فلترة متقدمة
         </div>
         <div className="flex-1">
           <Input
             value={query}
             onChange={(e) => onQueryChange(e.target.value)}
-            placeholder="??? ????..."
+            placeholder="بحث سريع..."
           />
         </div>
       </div>

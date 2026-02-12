@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Moon, Sun } from "lucide-react";
@@ -12,7 +12,7 @@ export function ThemeToggle({ className }: { className?: string }) {
 
   return (
     <button
-      aria-label="????? ?????"
+      aria-label="تبديل الثيم"
       onClick={() => setTheme(isDark ? "light" : "dark")}
       className={cn(
         "relative flex h-11 w-20 items-center rounded-full border border-white/15 bg-white/10 px-1 transition",

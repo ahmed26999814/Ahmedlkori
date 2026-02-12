@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -39,13 +39,13 @@ export function GlobalSearch() {
         item.title.toLowerCase().includes(q) ||
         item.subject.toLowerCase().includes(q)
       ) {
-        items.push({ label: item.title, href: "/summaries", tag: "????" });
+        items.push({ label: item.title, href: "/summaries", tag: "ملخص" });
       }
     });
 
     places.forEach((item) => {
       if (item.name.toLowerCase().includes(q)) {
-        items.push({ label: item.name, href: "/places", tag: "????" });
+        items.push({ label: item.name, href: "/places", tag: "مكان" });
       }
     });
 
@@ -56,19 +56,19 @@ export function GlobalSearch() {
     <section className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glass backdrop-blur">
       <div className="flex items-center gap-2 text-white/70">
         <Search size={18} />
-        <span className="text-sm">??? ???? ?? ?? ???????</span>
+        <span className="text-sm">بحث شامل في كل المحتوى</span>
       </div>
       <div className="mt-4">
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="???? ?? ????? ???? ????..."
+          placeholder="ابحث عن مادة، ملف، مكان..."
         />
       </div>
       <div className="mt-4 space-y-3">
         {!query && (
           <div className="text-xs text-white/50">
-            ????: ??????? ?????? ?????...
+            جرّب: فيزياء، تشريح، شبكات...
           </div>
         )}
         {results.map((item) => (

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
@@ -13,13 +13,13 @@ export function FeaturedCarousel({ items }: { items: SummaryFile[] }) {
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-white">?????? ??? ???????</h3>
+        <h3 className="text-lg font-semibold text-white">المميز هذا الأسبوع</h3>
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => emblaApi?.scrollPrev()}
-            aria-label="??????"
+            aria-label="السابق"
           >
             <ChevronRight size={18} />
           </Button>
@@ -27,7 +27,7 @@ export function FeaturedCarousel({ items }: { items: SummaryFile[] }) {
             variant="ghost"
             size="icon"
             onClick={() => emblaApi?.scrollNext()}
-            aria-label="??????"
+            aria-label="التالي"
           >
             <ChevronLeft size={18} />
           </Button>

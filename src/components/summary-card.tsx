@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Download, Eye, FileText, ImageIcon, Sparkles } from "lucide-react";
@@ -44,14 +44,14 @@ export function SummaryCard({
           </div>
           {featured ? (
             <Badge tone="accent">
-              <Sparkles size={12} /> ????
+              <Sparkles size={12} /> مميز
             </Badge>
           ) : null}
         </div>
         <div className="flex flex-wrap gap-2 text-xs text-white/60">
           <Badge tone="muted">{type.toUpperCase()}</Badge>
           <Badge tone="muted">{year}</Badge>
-          <Badge tone="muted">????? {term}</Badge>
+          <Badge tone="muted">الفصل {term}</Badge>
           <Badge tone="muted">{size}</Badge>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -62,20 +62,20 @@ export function SummaryCard({
           ))}
         </div>
         <div className="text-xs text-white/50">
-          ??? ?????: {formatDate(updatedAt)}
+          آخر تحديث: {formatDate(updatedAt)}
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <Button variant="secondary" size="sm" onClick={() => setOpen(true)}>
-            ?????? <Eye size={14} />
+            معاينة <Eye size={14} />
           </Button>
           <Button asChild variant="ghost" size="sm">
             <a href={url} target="_blank" rel="noreferrer" download>
-              ????? <Download size={14} />
+              تحميل <Download size={14} />
             </a>
           </Button>
           <div className="ml-auto flex items-center gap-2 text-xs text-white/60">
             {React.createElement(icon, { size: 14 })}
-            {type === "img" ? "???" : "?????"}
+            {type === "img" ? "صور" : "مستند"}
           </div>
         </div>
       </SpotlightCard>

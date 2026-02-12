@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { List, LayoutGrid } from "lucide-react";
@@ -55,8 +55,8 @@ export default function SummariesPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="???????? ????????"
-        description="?????? PDF ?Word ???? ?? ?????? ?????? ???? ?????? ????."
+        title="الملخصات والملفات"
+        description="ملخصات PDF وWord وصور مع معاينة وتنزيل سريع وفلاتر قوية."
       />
 
       {featured.length ? <FeaturedCarousel items={featured} /> : null}
@@ -65,10 +65,10 @@ export default function SummariesPage() {
         query={query}
         onQueryChange={setQuery}
         filters={[
-          { id: "subject", label: "??????", options: subjects, value: subject },
-          { id: "year", label: "?????", options: years, value: year },
-          { id: "term", label: "?????", options: terms, value: term },
-          { id: "type", label: "?????", options: types, value: type }
+          { id: "subject", label: "المادة", options: subjects, value: subject },
+          { id: "year", label: "السنة", options: years, value: year },
+          { id: "term", label: "الفصل", options: terms, value: term },
+          { id: "type", label: "النوع", options: types, value: type }
         ]}
         onFilterChange={(id, value) => {
           if (id === "subject") setSubject(value);
@@ -80,7 +80,7 @@ export default function SummariesPage() {
 
       <div className="flex items-center justify-between">
         <div className="text-sm text-white/60">
-          ??? {filtered.length} ???
+          عرض {filtered.length} ملف
         </div>
         <div className="flex items-center gap-2">
           <button

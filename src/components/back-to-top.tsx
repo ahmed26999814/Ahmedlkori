@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { ChevronUp } from "lucide-react";
 import React from "react";
@@ -22,7 +22,7 @@ export function BackToTop() {
       size="icon"
       className="fixed bottom-6 left-6 z-40"
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      aria-label="?????? ??????"
+      aria-label="العودة للأعلى"
     >
       <ChevronUp size={18} />
     </Button>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { toast } from "sonner";
@@ -22,9 +22,9 @@ export default function AdminPage() {
   const onLogin = () => {
     if (password === (process.env.NEXT_PUBLIC_ADMIN_PASSWORD || "admin")) {
       setAuthorized(true);
-      toast.success("?? ?????? ????? ???????");
+      toast.success("تم الدخول للوحة الإدارة");
     } else {
-      toast.error("???? ?????? ??? ?????");
+      toast.error("كلمة المرور غير صحيحة");
     }
   };
 
@@ -37,36 +37,36 @@ export default function AdminPage() {
         places: JSON.parse(data.places)
       };
       updateContent(next);
-      toast.success("?? ??? ????????? ??????");
+      toast.success("تم حفظ التعديلات محليًا");
     } catch {
-      toast.error("???? ?? ??? JSON");
+      toast.error("تأكد من صحة JSON");
     }
   };
 
   const onReset = () => {
     resetContent();
-    toast.message("??? ????? ???????? ??????????");
+    toast.message("تمت إعادة البيانات الافتراضية");
   };
 
   if (!authorized) {
     return (
       <div className="space-y-6">
         <PageHeader
-          title="???? ???????"
-          description="???? ????? ????? ???? ?????? ???????? ??????."
+          title="لوحة الإدارة"
+          description="لوحة محمية بكلمة مرور لتعديل البيانات محليًا."
         />
         <div className="max-w-md rounded-3xl border border-white/10 bg-white/5 p-6">
           <Input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="???? ??????"
+            placeholder="كلمة المرور"
           />
           <Button className="mt-4" onClick={onLogin}>
-            ????
+            دخول
           </Button>
           <p className="mt-3 text-xs text-white/50">
-            ??? ??? ????????? ?? ??????? ???. ?????? ????? ?????? ?????? ??????
+            يتم حفظ التعديلات في المتصفح فقط. لإعداد قاعدة بيانات حقيقية استخدم
             Supabase.
           </p>
         </div>
@@ -77,8 +77,8 @@ export default function AdminPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="???? ???????"
-        description="????? ???????? ?????? (??? ???? ?? ???????)."
+        title="لوحة الإدارة"
+        description="تعديل البيانات مباشرة (حفظ محلي في المتصفح)."
       />
       <div className="space-y-4">
         <label className="text-sm text-white/70">Telegram Reviews</label>
@@ -118,10 +118,10 @@ export default function AdminPage() {
       </div>
       <div className="flex flex-wrap gap-3">
         <Button variant="glow" onClick={onSave}>
-          ??? ?????????
+          حفظ التعديلات
         </Button>
         <Button variant="outline" onClick={onReset}>
-          ??????? ?????????
+          استعادة الافتراضي
         </Button>
       </div>
     </div>

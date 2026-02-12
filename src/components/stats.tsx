@@ -1,14 +1,14 @@
-"use client";
+﻿"use client";
 
 import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 
 const stats = [
-  { label: "??? ?????????", value: 120 },
-  { label: "?????? ?????", value: 86 },
-  { label: "??????? ?????", value: 24 },
-  { label: "????? ??????", value: 3 }
+  { label: "عدد المراجعات", value: 120 },
+  { label: "ملخصات متاحة", value: 86 },
+  { label: "مجموعات فعالة", value: 24 },
+  { label: "أماكن مذاكرة", value: 3 }
 ];
 
 function StatValue({ value }: { value: number }) {
@@ -32,7 +32,7 @@ export function Stats() {
           className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center shadow-soft"
         >
           <Badge tone="muted" className="mb-3">
-            ????????
+            إحصائيات
           </Badge>
           <div className="text-3xl font-semibold text-white">
             <StatValue value={stat.value} />+

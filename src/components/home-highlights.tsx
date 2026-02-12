@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
@@ -18,10 +18,10 @@ export function HomeHighlights() {
     <div className="grid gap-6 lg:grid-cols-2">
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-white">??? ?????????</h3>
+          <h3 className="text-lg font-semibold text-white">آخر المراجعات</h3>
           <Button asChild variant="ghost" size="sm">
             <Link href="/reviews">
-              ??? ???? <ArrowLeft size={14} />
+              عرض الكل <ArrowLeft size={14} />
             </Link>
           </Button>
         </div>
@@ -33,10 +33,10 @@ export function HomeHighlights() {
       </div>
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-semibold text-white">???? ????????</h3>
+          <h3 className="text-lg font-semibold text-white">أحدث الملخصات</h3>
           <Button asChild variant="ghost" size="sm">
             <Link href="/summaries">
-              ??? ???? <ArrowLeft size={14} />
+              عرض الكل <ArrowLeft size={14} />
             </Link>
           </Button>
         </div>

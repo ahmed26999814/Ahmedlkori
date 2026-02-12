@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -26,7 +26,7 @@ export function Navbar() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-lg font-semibold text-white">
-              ??????? ????
+              مراجعات أحمد
             </span>
             <span className="hidden text-xs text-white/50 md:inline">
               Ahmed Study Hub
@@ -57,7 +57,7 @@ export function Navbar() {
               className="hidden md:inline-flex"
             >
               <Search size={16} />
-              ??? ????
+              بحث سريع
             </Button>
             <ThemeToggle className="hidden md:flex" />
             <Button
@@ -65,7 +65,7 @@ export function Navbar() {
               size="icon"
               className="md:hidden"
               onClick={() => setOpen(true)}
-              aria-label="??? ???????"
+              aria-label="فتح القائمة"
             >
               <Menu size={20} />
             </Button>

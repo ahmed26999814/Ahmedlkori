@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, DownloadCloud, Sparkles } from "lucide-react";
@@ -16,32 +16,32 @@ export function Hero() {
         variants={fadeUp}
         className="space-y-6"
       >
-        <Badge tone="accent">???? 2026 ?</Badge>
+        <Badge tone="accent">جاهز 2026 ✨</Badge>
         <h1 className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-          ??????? ???? | Ahmed Study Hub
+          مراجعات أحمد | Ahmed Study Hub
         </h1>
         <p className="max-w-2xl text-sm text-white/70 md:text-base">
-          ???? ??? ????????? ????????? ?????? ??????? ?? ??? ????? ?????
-          ??????? ?????? ?????? ????? ?????? ???? ?????? ??????.
+          مركز فخم للمراجعات والملخصات وروابط الدراسة مع بحث سريع، فلترة
+          متقدمة، وتجربة مستخدم مبنية لتختصر وقتك وتضاعف تركيزك.
         </p>
         <div className="flex flex-wrap items-center gap-3">
           <Button asChild variant="glow" size="lg">
             <Link href="/reviews">
-              ???? ?????????? <ArrowUpRight size={18} />
+              ابدأ بالمراجعات <ArrowUpRight size={18} />
             </Link>
           </Button>
           <Button asChild variant="secondary" size="lg">
             <Link href="/summaries">
-              ???? ???????? <DownloadCloud size={18} />
+              تصفح الملخصات <DownloadCloud size={18} />
             </Link>
           </Button>
         </div>
         <div className="flex flex-wrap gap-3 text-xs text-white/60">
           <div className="flex items-center gap-2">
             <Sparkles size={14} />
-            ??? ???? + Command Palette (Ctrl + K)
+            بحث لحظي + Command Palette (Ctrl + K)
           </div>
-          <div>????? ??? ?????? + ????? + ????? + ?????</div>
+          <div>فلترة حسب المادة + السنة + الفصل + النوع</div>
         </div>
       </motion.div>
       <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent-400/20 blur-[70px]" />

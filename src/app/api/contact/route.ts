@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { z } from "zod";
 
@@ -23,9 +23,9 @@ export async function POST(req: Request) {
     await resend.emails.send({
       from: "Ahmed Study Hub <onboarding@resend.dev>",
       to: target,
-      subject: `????? ????? ?? ${data.name}`,
+      subject: `رسالة جديدة من ${data.name}`,
       replyTo: data.email || undefined,
-      text: `?????: ${data.name}\n??????: ${data.email || "??? ?????"}\n\n${data.message}`
+      text: `الاسم: ${data.name}\nالبريد: ${data.email || "غير متوفر"}\n\n${data.message}`
     });
 
     return NextResponse.json({ ok: true });

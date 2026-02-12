@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { ReviewCard } from "@/components/review-card";
@@ -49,8 +49,8 @@ export default function ReviewsPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="?????????"
-        description="????? ??????? Telegram ???????? WhatsApp ????? ?? ??? ???? ????."
+        title="المراجعات"
+        description="روابط مراجعات Telegram ومجموعات WhatsApp منظمة مع بحث ونسخ سريع."
       />
 
       <div className="flex flex-wrap gap-3">
@@ -82,7 +82,7 @@ export default function ReviewsPage() {
         filters={[
           {
             id: "subject",
-            label: "??????",
+            label: "المادة",
             options: subjects,
             value: subject
           }

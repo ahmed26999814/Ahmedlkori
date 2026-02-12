@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import * as React from "react";
 import { Command } from "cmdk";
@@ -35,7 +35,7 @@ export function CommandPalette() {
     <Command.Dialog
       open={open}
       onOpenChange={setOpen}
-      label="???? ???????"
+      label="لوحة الأوامر"
       className="fixed inset-0 z-50 flex items-start justify-center bg-black/60 p-4 backdrop-blur"
     >
       <div className="w-full max-w-xl overflow-hidden rounded-3xl border border-white/10 bg-[#0b0c10] shadow-glass">
@@ -44,14 +44,14 @@ export function CommandPalette() {
           <Command.Input
             value={value}
             onValueChange={setValue}
-            placeholder="???? ?? ???? ?? ??????..."
+            placeholder="ابحث عن صفحة أو اختصار..."
             className="w-full bg-transparent text-sm outline-none"
           />
           <span className="text-[11px]">Ctrl + K</span>
         </div>
         <Command.List className="max-h-80 overflow-auto p-2">
           <Command.Empty className="p-4 text-sm text-white/60">
-            ?? ???? ?????.
+            لا توجد نتائج.
           </Command.Empty>
           {commands.map((item) => (
             <Command.Item

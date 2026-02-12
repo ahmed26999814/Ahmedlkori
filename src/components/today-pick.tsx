@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import { Sparkles } from "lucide-react";
@@ -22,7 +22,7 @@ export function TodayPick() {
   return (
     <section className="space-y-4">
       <div className="flex items-center gap-2 text-sm text-white/70">
-        <Sparkles size={16} /> ?????? ?????
+        <Sparkles size={16} /> اختيار اليوم
       </div>
       <SummaryCard {...pick} />
     </section>

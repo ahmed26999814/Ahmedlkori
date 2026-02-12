@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Github, Instagram, Mail, MessageCircle, Send } from "lucide-react";
 
 export function Footer() {
@@ -7,24 +7,24 @@ export function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 md:flex-row md:items-center md:justify-between md:px-6">
         <div className="space-y-3">
           <h3 className="text-lg font-semibold text-white">
-            ??????? ???? | Ahmed Study Hub
+            مراجعات أحمد | Ahmed Study Hub
           </h3>
           <p className="text-sm text-white/70">
-            ???? ??????? ??????? ?????? ??? ???? ??????.
+            منصة مراجعات وملخصات وتجربة بحث فخمة للطلاب.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-white/70">
           <Link href="/reviews" className="hover:text-white">
-            ?????????
+            المراجعات
           </Link>
           <Link href="/summaries" className="hover:text-white">
-            ????????
+            الملخصات
           </Link>
           <Link href="/places" className="hover:text-white">
-            ????? ???????
+            أماكن الدراسة
           </Link>
           <Link href="/contact" className="hover:text-white">
-            ?????
+            تواصل
           </Link>
         </div>
         <div className="flex items-center gap-3">
