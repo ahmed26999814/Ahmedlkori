@@ -1,128 +1,69 @@
-﻿"use client";
+"use client";
 
 import React from "react";
-import { List, LayoutGrid } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
-import { FilterBar } from "@/components/filters";
-import { SummaryCard } from "@/components/summary-card";
-import { FeaturedCarousel } from "@/components/featured-carousel";
-import { SkeletonGrid } from "@/components/skeleton-grid";
+import { Button } from "@/components/ui/button";
+import { SpotlightCard } from "@/components/spotlight-card";
 import { useContent } from "@/components/providers/content-provider";
-import { uniqueValues, sortByUpdatedAt } from "@/lib/utils";
 import { useLang } from "@/components/providers/language-provider";
 
 export default function SummariesPage() {
   const { summaries } = useContent();
   const { t, lang } = useLang();
-  const [query, setQuery] = React.useState("");
-  const [subject, setSubject] = React.useState("");
-  const [year, setYear] = React.useState("");
-  const [term, setTerm] = React.useState("");
-  const [type, setType] = React.useState("");
-  const [view, setView] = React.useState<"grid" | "list">("grid");
-  const [loading, setLoading] = React.useState(true);
 
-  React.useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 300);
-    return () => clearTimeout(t);
-  }, []);
-
-  const subjects = uniqueValues(summaries.map((item) => item.subject));
-  const years = uniqueValues(summaries.map((item) => String(item.year)));
-  const terms = uniqueValues(summaries.map((item) => item.term));
-  const types = uniqueValues(
-    summaries.map((item) =>
-      item.type === "folder" ? "مجلد" : item.type.toUpperCase()
-    )
-  );
-
-  const filtered = React.useMemo(() => {
-    const q = query.toLowerCase();
-    return summaries.filter((item) => {
-      const matchesQuery =
-        item.title.toLowerCase().includes(q) ||
-        item.subject.toLowerCase().includes(q);
-      const matchesSubject = !subject || item.subject === subject;
-      const matchesYear = !year || String(item.year) === year;
-      const matchesTerm = !term || item.term === term;
-      const typeLabel = item.type === "folder" ? "مجلد" : item.type.toUpperCase();
-      const matchesType = !type || typeLabel === type;
-      return (
-        matchesQuery &&
-        matchesSubject &&
-        matchesYear &&
-        matchesTerm &&
-        matchesType
-      );
+  const grouped = React.useMemo(() => {
+    const map = new Map<string, typeof summaries>();
+    summaries.forEach((item) => {
+      if (!map.has(item.subject)) {
+        map.set(item.subject, []);
+      }
+      map.get(item.subject)?.push(item);
     });
-  }, [summaries, query, subject, year, term, type]);
-
-  const featured = summaries.filter((item) => item.featured).slice(0, 6);
+    return Array.from(map.entries()).map(([subject, items]) => ({
+      subject,
+      items: items.sort((a, b) => b.updatedAt.localeCompare(a.updatedAt))
+    }));
+  }, [summaries]);
 
   return (
     <div className="space-y-8">
       <PageHeader title={t("summaries_title")} description={t("summaries_desc")} />
 
-      {featured.length ? <FeaturedCarousel items={featured} /> : null}
-
-      <FilterBar
-        query={query}
-        onQueryChange={setQuery}
-        filters={[
-          { id: "subject", label: t("filter_subject"), options: subjects, value: subject },
-          { id: "year", label: t("filter_year"), options: years, value: year },
-          { id: "term", label: t("filter_term"), options: terms, value: term },
-          { id: "type", label: t("filter_type"), options: types, value: type }
-        ]}
-        onFilterChange={(id, value) => {
-          if (id === "subject") setSubject(value);
-          if (id === "year") setYear(value);
-          if (id === "term") setTerm(value);
-          if (id === "type") setType(value);
-        }}
-      />
-
-      <div className="flex items-center justify-between">
-        <div className="text-sm text-white/60">
-          {lang === "fr" ? `${filtered.length} fichiers` : `عرض ${filtered.length} ملف`}
-        </div>
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setView("grid")}
-            className={`rounded-full px-4 py-2 text-xs transition ${
-              view === "grid"
-                ? "bg-white/15 text-white"
-                : "bg-white/5 text-white/60"
-            }`}
-          >
-            <LayoutGrid size={14} />
-          </button>
-          <button
-            onClick={() => setView("list")}
-            className={`rounded-full px-4 py-2 text-xs transition ${
-              view === "list"
-                ? "bg-white/15 text-white"
-                : "bg-white/5 text-white/60"
-            }`}
-          >
-            <List size={14} />
-          </button>
-        </div>
-      </div>
-
-      {loading ? (
-        <SkeletonGrid count={6} />
-      ) : (
-        <div
-          className={
-            view === "grid"
-              ? "grid gap-4 md:grid-cols-2 lg:grid-cols-3"
-              : "grid gap-4"
-          }
-        >
-          {sortByUpdatedAt(filtered).map((item) => (
-            <SummaryCard key={item.title} {...item} />
+      {grouped.length ? (
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {grouped.map((group) => (
+            <SpotlightCard key={group.subject} className="space-y-4">
+              <div>
+                <h3 className="text-lg font-semibold text-white">
+                  {group.subject}
+                </h3>
+                <p className="text-sm text-white/60">
+                  {lang === "fr" ? "Liens des fichiers" : "روابط الملفات"}
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) =>
+                  item.url ? (
+                    <Button key={item.title} asChild variant="secondary" size="sm">
+                      <a href={item.url} target="_blank" rel="noreferrer">
+                        {item.title}
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button key={item.title} variant="outline" size="sm" disabled>
+                      {lang === "fr" ? "Bientôt" : "قريبًا"}
+                    </Button>
+                  )
+                )}
+              </div>
+            </SpotlightCard>
           ))}
+        </div>
+      ) : (
+        <div className="rounded-3xl border border-white/10 bg-white/5 p-6 text-sm text-white/60">
+          {lang === "fr"
+            ? "Aucun fichier disponible pour le moment."
+            : "لا توجد ملفات متاحة حاليًا."}
         </div>
       )}
     </div>
