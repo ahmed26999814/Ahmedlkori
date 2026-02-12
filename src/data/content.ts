@@ -16,7 +16,7 @@ export type WhatsAppGroup = {
 export type SummaryFile = {
   title: string;
   subject: string;
-  type: "pdf" | "doc" | "img";
+  type: "pdf" | "doc" | "img" | "folder";
   url: string;
   size: string;
   year: number;
@@ -84,6 +84,18 @@ export const whatsappGroups: WhatsAppGroup[] = [
 ];
 
 export const summaries: SummaryFile[] = [
+  {
+    title: "ملفات Biologie cellulaire (S1) — مجلد",
+    subject: "Biologie cellulaire",
+    type: "folder",
+    url: "https://drive.google.com/drive/folders/1Jk6mFbBt2GXxom6kLU_kAG430cU5qqj3",
+    size: "Google Drive",
+    year: 2024,
+    term: "الأول",
+    tags: ["S1", "مجلد", "Biologie"],
+    featured: true,
+    updatedAt: "2026-02-12"
+  },
   {
     title: "ملخص الكيمياء العضوية – خرائط ذهنية",
     subject: "كيمياء عضوية",

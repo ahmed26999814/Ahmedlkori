@@ -28,7 +28,11 @@ export default function SummariesPage() {
   const subjects = uniqueValues(summaries.map((item) => item.subject));
   const years = uniqueValues(summaries.map((item) => String(item.year)));
   const terms = uniqueValues(summaries.map((item) => item.term));
-  const types = uniqueValues(summaries.map((item) => item.type.toUpperCase()));
+  const types = uniqueValues(
+    summaries.map((item) =>
+      item.type === "folder" ? "مجلد" : item.type.toUpperCase()
+    )
+  );
 
   const filtered = React.useMemo(() => {
     const q = query.toLowerCase();
@@ -39,7 +43,8 @@ export default function SummariesPage() {
       const matchesSubject = !subject || item.subject === subject;
       const matchesYear = !year || String(item.year) === year;
       const matchesTerm = !term || item.term === term;
-      const matchesType = !type || item.type.toUpperCase() === type;
+      const typeLabel = item.type === "folder" ? "مجلد" : item.type.toUpperCase();
+      const matchesType = !type || typeLabel === type;
       return (
         matchesQuery &&
         matchesSubject &&

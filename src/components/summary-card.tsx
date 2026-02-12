@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import React from "react";
-import { Download, Eye, FileText, ImageIcon, Sparkles } from "lucide-react";
+import { Download, Eye, FileText, ImageIcon, Folder, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SpotlightCard } from "@/components/spotlight-card";
@@ -22,7 +22,7 @@ export function SummaryCard({
 }: {
   title: string;
   subject: string;
-  type: "pdf" | "doc" | "img";
+  type: "pdf" | "doc" | "img" | "folder";
   url: string;
   size: string;
   year: number;
@@ -32,7 +32,9 @@ export function SummaryCard({
   updatedAt: string;
 }) {
   const [open, setOpen] = React.useState(false);
-  const icon = type === "img" ? ImageIcon : FileText;
+  const icon =
+    type === "img" ? ImageIcon : type === "folder" ? Folder : FileText;
+  const typeLabel = type === "folder" ? "مجلد" : type.toUpperCase();
 
   return (
     <>
@@ -49,7 +51,7 @@ export function SummaryCard({
           ) : null}
         </div>
         <div className="flex flex-wrap gap-2 text-xs text-white/60">
-          <Badge tone="muted">{type.toUpperCase()}</Badge>
+          <Badge tone="muted">{typeLabel}</Badge>
           <Badge tone="muted">{year}</Badge>
           <Badge tone="muted">الفصل {term}</Badge>
           <Badge tone="muted">{size}</Badge>
@@ -65,27 +67,39 @@ export function SummaryCard({
           آخر تحديث: {formatDate(updatedAt)}
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <Button variant="secondary" size="sm" onClick={() => setOpen(true)}>
-            معاينة <Eye size={14} />
-          </Button>
-          <Button asChild variant="ghost" size="sm">
-            <a href={url} target="_blank" rel="noreferrer" download>
-              تحميل <Download size={14} />
-            </a>
-          </Button>
+          {type === "folder" ? (
+            <Button asChild variant="secondary" size="sm">
+              <a href={url} target="_blank" rel="noreferrer">
+                فتح المجلد <Eye size={14} />
+              </a>
+            </Button>
+          ) : (
+            <>
+              <Button variant="secondary" size="sm" onClick={() => setOpen(true)}>
+                معاينة <Eye size={14} />
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <a href={url} target="_blank" rel="noreferrer" download>
+                  تحميل <Download size={14} />
+                </a>
+              </Button>
+            </>
+          )}
           <div className="ml-auto flex items-center gap-2 text-xs text-white/60">
             {React.createElement(icon, { size: 14 })}
-            {type === "img" ? "صور" : "مستند"}
+            {type === "img" ? "صور" : type === "folder" ? "مجلد" : "مستند"}
           </div>
         </div>
       </SpotlightCard>
-      <FilePreviewModal
-        open={open}
-        onClose={() => setOpen(false)}
-        title={title}
-        url={url}
-        type={type}
-      />
+      {type !== "folder" ? (
+        <FilePreviewModal
+          open={open}
+          onClose={() => setOpen(false)}
+          title={title}
+          url={url}
+          type={type}
+        />
+      ) : null}
     </>
   );
 }
