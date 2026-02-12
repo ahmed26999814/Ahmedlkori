@@ -45,139 +45,41 @@ export const siteMeta = {
 
 export const telegramReviews: TelegramReview[] = [
   {
-    title: "مراجعة الكيمياء العضوية – الأساسيات",
-    subject: "كيمياء عضوية",
-    url: "https://t.me/example/organic101",
-    tags: ["مهم", "مكثف", "أسئلة"],
-    updatedAt: "2026-01-22"
+    title: "Biologie cellulaire — 2024-2025",
+    subject: "Biologie cellulaire",
+    url: "https://t.me/+lYx1rhWxXvUwOGFk",
+    tags: ["سنة 2024-2025"],
+    updatedAt: "2026-02-12"
   },
   {
-    title: "مراجعة فيزياء 1 – حركة وقوى",
-    subject: "فيزياء",
-    url: "https://t.me/example/physics1",
-    tags: ["شرح", "رسوم", "حلول"],
-    updatedAt: "2026-01-18"
+    title: "Biologie cellulaire — 2025-2026",
+    subject: "Biologie cellulaire",
+    url: "https://t.me/+4NiZXL4U3YRiMzRk",
+    tags: ["سنة 2025-2026"],
+    updatedAt: "2026-02-12"
   },
   {
-    title: "مراجعة تشريح 2 – الجهاز العصبي",
-    subject: "تشريح",
-    url: "https://t.me/example/anatomy2",
-    tags: ["خرائط", "صور", "اختبار"],
-    updatedAt: "2026-02-01"
+    title: "Découverte de la biologie (S1) — 2024-2025",
+    subject: "Découverte de la biologie (S1)",
+    url: "https://t.me/+nT1RJwFG9pBlNDZk",
+    tags: ["S1", "سنة 2024-2025"],
+    updatedAt: "2026-02-12"
   },
   {
-    title: "مراجعة رياضيات متقدمة – التفاضل",
-    subject: "رياضيات",
-    url: "https://t.me/example/adv-math",
-    tags: ["سريع", "أمثلة", "ملخص"],
-    updatedAt: "2026-01-30"
-  },
-  {
-    title: "مراجعة أحياء دقيقة – بكتيريا",
-    subject: "أحياء دقيقة",
-    url: "https://t.me/example/microbio",
-    tags: ["رسوم", "جداول"],
-    updatedAt: "2026-01-27"
-  },
-  {
-    title: "مراجعة علم الأدوية – الجرعات",
-    subject: "صيدلة",
-    url: "https://t.me/example/pharma",
-    tags: ["حساب", "ملخص"],
-    updatedAt: "2026-01-15"
-  },
-  {
-    title: "مراجعة برمجة 1 – أساسيات C++",
-    subject: "برمجة",
-    url: "https://t.me/example/cpp",
-    tags: ["كود", "أسئلة"],
-    updatedAt: "2026-02-03"
-  },
-  {
-    title: "مراجعة لغة إنجليزية – المصطلحات",
-    subject: "إنجليزي",
-    url: "https://t.me/example/english-terms",
-    tags: ["Vocabulary", "نطق"],
-    updatedAt: "2026-01-11"
-  },
-  {
-    title: "مراجعة شبكات – طبقات OSI",
-    subject: "شبكات",
-    url: "https://t.me/example/networks",
-    tags: ["رسوم", "سريع"],
-    updatedAt: "2026-02-05"
-  },
-  {
-    title: "مراجعة إحصاء – التوزيعات",
-    subject: "إحصاء",
-    url: "https://t.me/example/stats",
-    tags: ["أمثلة", "حلول"],
-    updatedAt: "2026-01-08"
-  },
-  {
-    title: "مراجعة محاسبة – القوائم المالية",
-    subject: "محاسبة",
-    url: "https://t.me/example/accounting",
-    tags: ["تلخيص", "قوائم"],
-    updatedAt: "2026-01-05"
-  },
-  {
-    title: "مراجعة نظم تشغيل – إدارة الذاكرة",
-    subject: "نظم تشغيل",
-    url: "https://t.me/example/os",
-    tags: ["رسوم", "أسئلة"],
-    updatedAt: "2026-02-07"
+    title: "Découverte de la biologie (S1) — 2025-2026",
+    subject: "Découverte de la biologie (S1)",
+    url: "https://t.me/+U9b_jKVNMoUyMDI0",
+    tags: ["S1", "سنة 2025-2026"],
+    updatedAt: "2026-02-12"
   }
 ];
 
 export const whatsappGroups: WhatsAppGroup[] = [
   {
-    title: "مجموعة حل واجبات الفيزياء",
-    subject: "فيزياء",
-    url: "https://chat.whatsapp.com/example/physics",
-    membersHint: "+220 طالب"
-  },
-  {
-    title: "مجموعة المذاكرة اليومية - تشريح",
-    subject: "تشريح",
-    url: "https://chat.whatsapp.com/example/anatomy",
-    membersHint: "+180 طالب"
-  },
-  {
-    title: "مجموعة برمجة المشاريع",
-    subject: "برمجة",
-    url: "https://chat.whatsapp.com/example/programming",
-    membersHint: "+350 طالب"
-  },
-  {
-    title: "مجموعة ملخصات الكيمياء",
-    subject: "كيمياء",
-    url: "https://chat.whatsapp.com/example/chem",
-    membersHint: "+160 طالب"
-  },
-  {
-    title: "مجموعة مناقشة الشبكات",
-    subject: "شبكات",
-    url: "https://chat.whatsapp.com/example/networks",
-    membersHint: "+140 طالب"
-  },
-  {
-    title: "مجموعة اقتصاد ومحاسبة",
-    subject: "محاسبة",
-    url: "https://chat.whatsapp.com/example/accounting",
-    membersHint: "+120 طالب"
-  },
-  {
-    title: "مجموعة اللغة الإنجليزية",
-    subject: "إنجليزي",
-    url: "https://chat.whatsapp.com/example/english",
-    membersHint: "+90 طالب"
-  },
-  {
-    title: "مجموعة مراجعة الإحصاء",
-    subject: "إحصاء",
-    url: "https://chat.whatsapp.com/example/stats",
-    membersHint: "+110 طالب"
+    title: "مجموعة عامة لشرح Module Bio",
+    subject: "Module Bio",
+    url: "https://chat.whatsapp.com/ErBhW3Rdq5p53Gsl4Veerq?mode=gi_t",
+    membersHint: "عام"
   }
 ];
 
