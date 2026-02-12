@@ -29,8 +29,6 @@ export default function AboutPage() {
             <Button asChild variant="secondary" size="sm">
               <a
                 href="https://www.facebook.com/profile.php?id=100026213213446"
-                target="_blank"
-                rel="noreferrer"
               >
                 Facebook <ExternalLink size={14} />
               </a>
@@ -38,8 +36,6 @@ export default function AboutPage() {
             <Button asChild variant="secondary" size="sm">
               <a
                 href="https://www.tiktok.com/@kori.ahmed44?_r=1&_t=ZS-93qlIq0ru5a"
-                target="_blank"
-                rel="noreferrer"
               >
                 TikTok <ExternalLink size={14} />
               </a>

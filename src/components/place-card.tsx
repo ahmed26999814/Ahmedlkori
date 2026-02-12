@@ -28,14 +28,14 @@ export function PlaceCard({
         <div className="flex flex-wrap gap-2">
           {appStoreUrl ? (
             <Button asChild variant="secondary" size="sm">
-              <a href={appStoreUrl} target="_blank" rel="noreferrer">
+              <a href={appStoreUrl}>
                 App Store <Smartphone size={14} />
               </a>
             </Button>
           ) : null}
           {playStoreUrl ? (
             <Button asChild variant="secondary" size="sm">
-              <a href={playStoreUrl} target="_blank" rel="noreferrer">
+              <a href={playStoreUrl}>
                 Google Play <Smartphone size={14} />
               </a>
             </Button>
@@ -43,7 +43,7 @@ export function PlaceCard({
         </div>
       ) : url ? (
         <Button asChild variant="secondary" size="sm">
-          <a href={url} target="_blank" rel="noreferrer">
+          <a href={url}>
             فتح على الخرائط <Navigation size={14} />
           </a>
         </Button>

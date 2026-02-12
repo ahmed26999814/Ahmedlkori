@@ -15,7 +15,7 @@ export function HomeContact() {
           <p className="text-sm text-white/60">{t("home_contact_desc")}</p>
         </div>
         <Button asChild variant="glow" size="lg">
-          <a href="https://wa.me/44141294" target="_blank" rel="noreferrer">
+          <a href="https://wa.me/44141294">
             {t("home_contact_cta")} <MessageCircle size={18} />
           </a>
         </Button>

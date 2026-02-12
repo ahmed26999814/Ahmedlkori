@@ -3,14 +3,13 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, DownloadCloud } from "lucide-react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { fadeUp } from "@/lib/motion";
 import { useLang } from "@/components/providers/language-provider";
 
 export function Hero() {
   const { t } = useLang();
-  const router = useRouter();
 
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-glass backdrop-blur md:p-12">
@@ -36,21 +35,20 @@ export function Hero() {
           </h1>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button
-            variant="glow"
-            size="lg"
-            className="w-full sm:w-auto"
-            onClick={() => router.push("/reviews")}
-          >
-            {t("hero_cta_reviews")} <ArrowUpRight size={18} />
+          <Button asChild variant="glow" size="lg" className="w-full sm:w-auto">
+            <Link href="/reviews">
+              {t("hero_cta_reviews")} <ArrowUpRight size={18} />
+            </Link>
           </Button>
           <Button
+            asChild
             variant="secondary"
             size="lg"
             className="w-full sm:w-auto"
-            onClick={() => router.push("/summaries")}
           >
-            {t("hero_cta_summaries")} <DownloadCloud size={18} />
+            <Link href="/summaries">
+              {t("hero_cta_summaries")} <DownloadCloud size={18} />
+            </Link>
           </Button>
         </div>
       </motion.div>

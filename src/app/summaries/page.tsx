@@ -11,9 +11,6 @@ import { useLang } from "@/components/providers/language-provider";
 export default function SummariesPage() {
   const { summaries } = useContent();
   const { t, lang } = useLang();
-  const openLink = React.useCallback((url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer");
-  }, []);
 
   const groupedByTerm = React.useMemo(() => {
     const terms = ["الأول", "الثاني"];
@@ -70,13 +67,10 @@ export default function SummariesPage() {
                       <div className="flex flex-wrap gap-2">
                         {group.files.map((item) =>
                           item.url ? (
-                            <Button
-                              key={item.title}
-                              variant="secondary"
-                              size="sm"
-                              onClick={() => openLink(item.url)}
-                            >
-                              {item.title} <ExternalLink size={14} />
+                            <Button key={item.title} asChild variant="secondary" size="sm">
+                              <a href={item.url}>
+                                {item.title} <ExternalLink size={14} />
+                              </a>
                             </Button>
                           ) : (
                             <Button key={item.title} variant="outline" size="sm" disabled>
