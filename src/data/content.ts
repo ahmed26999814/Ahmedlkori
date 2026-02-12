@@ -91,8 +91,8 @@ export const telegramReviews: TelegramReview[] = [
     yearLabel: "قريبًا"
   },
   {
-    title: "Embryologie — قريبًا",
-    subject: "Embryologie",
+    title: "Embryologie et Histologie — قريبًا",
+    subject: "Embryologie et Histologie",
     url: "",
     tags: ["S2", "قريبًا"],
     updatedAt: "2026-02-12",
@@ -125,36 +125,36 @@ export const summaries: SummaryFile[] = [
     updatedAt: "2026-02-12"
   },
   {
-    title: "ملفات Découverte de la biologie (S1) — قريبًا",
+    title: "ملفات Découverte de la biologie (S1) — مجلد",
     subject: "Découverte de la biologie",
     type: "folder",
-    url: "",
-    size: "قريبًا",
+    url: "https://drive.google.com/drive/folders/1Doi9goQtYAQxYPx8JwG3CAGowvS_47FL",
+    size: "Google Drive",
     year: 2024,
     term: "الأول",
-    tags: ["S1", "قريبًا"],
+    tags: ["S1", "مجلد"],
     updatedAt: "2026-02-12"
   },
   {
-    title: "ملفات Biologie cellulaire (S2) — قريبًا",
+    title: "ملفات Biologie cellulaire 2 (S2) — مجلد",
     subject: "Biologie cellulaire",
     type: "folder",
-    url: "",
-    size: "قريبًا",
+    url: "https://drive.google.com/drive/folders/19PeyM3kYgnV03Vt58kM26o2yHzrX-vQA",
+    size: "Google Drive",
     year: 2025,
     term: "الثاني",
-    tags: ["S2", "قريبًا"],
+    tags: ["S2", "مجلد"],
     updatedAt: "2026-02-12"
   },
   {
-    title: "ملفات Embryologie (S2) — قريبًا",
-    subject: "Embryologie",
+    title: "ملفات Embryologie et Histologie (S2) — مجلد",
+    subject: "Embryologie et Histologie",
     type: "folder",
-    url: "",
-    size: "قريبًا",
+    url: "https://drive.google.com/drive/folders/1eFvKp18bHteG4-0WysyrD-bvw8SQaBFP",
+    size: "Google Drive",
     year: 2025,
     term: "الثاني",
-    tags: ["S2", "قريبًا"],
+    tags: ["S2", "مجلد"],
     updatedAt: "2026-02-12"
   }
 ];
