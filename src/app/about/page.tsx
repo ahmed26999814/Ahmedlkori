@@ -23,7 +23,7 @@ export default function AboutPage() {
           <p className="mt-4 leading-7 text-white/60">
             {lang === "fr"
               ? "Mon objectif est de soutenir les étudiants et de fournir un contenu clair et utile qui rend leur parcours universitaire plus facile et plus confiant."
-              : "هدفي هو دعم الطلاب وتوفير محتوى واضح ومفيد يجعل رحلتهم الجامعية أسهل وأكثر ثقة."}
+              : "هدفي هو دعم الطلاب وتوفير محتوى واضح ومفيد يجعل رحلتهم الجامعية أسهل وأكثر ثقة. وتوجهي النقابي هو الاتحاد الوطني لطلاب موريتانيا (UNEM)."}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button asChild variant="secondary" size="sm">
