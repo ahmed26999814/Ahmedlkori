@@ -62,23 +62,23 @@ html.light .text-white {
 }
 
 html.light .text-white\/50 {
-  color: rgba(15, 23, 42, 0.5);
-}
-
-html.light .text-white\/60 {
-  color: rgba(15, 23, 42, 0.6);
-}
-
-html.light .text-white\/70 {
   color: rgba(15, 23, 42, 0.7);
 }
 
-html.light .text-white\/80 {
+html.light .text-white\/60 {
   color: rgba(15, 23, 42, 0.8);
 }
 
-html.light .text-white\/90 {
+html.light .text-white\/70 {
   color: rgba(15, 23, 42, 0.9);
+}
+
+html.light .text-white\/80 {
+  color: rgba(15, 23, 42, 0.95);
+}
+
+html.light .text-white\/90 {
+  color: rgba(15, 23, 42, 0.98);
 }
 
 html.light .shadow-glass {
