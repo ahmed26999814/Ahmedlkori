@@ -1,7 +1,9 @@
 ﻿"use client";
 
+import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { useLang } from "@/components/providers/language-provider";
 
 export default function AboutPage() {
@@ -23,16 +25,25 @@ export default function AboutPage() {
               ? "Mon objectif est de soutenir les étudiants et de fournir un contenu clair et utile qui rend leur parcours universitaire plus facile et plus confiant."
               : "هدفي هو دعم الطلاب وتوفير محتوى واضح ومفيد يجعل رحلتهم الجامعية أسهل وأكثر ثقة."}
           </p>
-          <div className="mt-6 grid gap-3 md:grid-cols-3">
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              {t("about_item_1")}
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              {t("about_item_2")}
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-              {t("about_item_3")}
-            </div>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button asChild variant="secondary" size="sm">
+              <a
+                href="https://www.facebook.com/profile.php?id=100026213213446"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Facebook <ExternalLink size={14} />
+              </a>
+            </Button>
+            <Button asChild variant="secondary" size="sm">
+              <a
+                href="https://www.tiktok.com/@kori.ahmed44?_r=1&_t=ZS-93qlIq0ru5a"
+                target="_blank"
+                rel="noreferrer"
+              >
+                TikTok <ExternalLink size={14} />
+              </a>
+            </Button>
           </div>
         </div>
         <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
@@ -42,11 +53,6 @@ export default function AboutPage() {
               alt="أحمد محمد لمين الكوري"
               className="h-full w-full object-cover"
             />
-          </div>
-          <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-white/60">
-            {lang === "fr"
-              ? "Photo personnelle — ajoutez votre image dans public/ahmed.jpg"
-              : "الصورة الشخصية — ضع صورتك داخل public/ahmed.jpg"}
           </div>
         </div>
       </div>
