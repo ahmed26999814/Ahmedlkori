@@ -39,7 +39,7 @@ export function Footer() {
           </a>
           <a
             className="rounded-full border border-white/10 bg-white/5 p-2 text-white/70 transition hover:text-white"
-            href="https://wa.me/000000000"
+            href="https://wa.me/44141294"
             target="_blank"
             rel="noreferrer"
             aria-label="WhatsApp"

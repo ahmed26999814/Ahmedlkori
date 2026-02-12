@@ -1,19 +1,8 @@
 ﻿"use client";
 
-import dynamic from "next/dynamic";
 import { PageHeader } from "@/components/page-header";
 import { PlaceCard } from "@/components/place-card";
 import { useContent } from "@/components/providers/content-provider";
-import { Skeleton } from "@/components/ui/skeleton";
-
-const PlacesMap = dynamic(() => import("@/components/places-map").then((mod) => mod.PlacesMap), {
-  ssr: false,
-  loading: () => (
-    <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-      <Skeleton className="h-[320px] w-full" />
-    </div>
-  )
-});
 
 export default function PlacesPage() {
   const { places } = useContent();
@@ -30,8 +19,6 @@ export default function PlacesPage() {
           <PlaceCard key={place.name} {...place} />
         ))}
       </div>
-
-      <PlacesMap places={places} />
     </div>
   );
 }

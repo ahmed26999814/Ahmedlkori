@@ -349,21 +349,5 @@ export const places: Place[] = [
     locationHint: "منصة رقمية",
     lat: 21.3891,
     lng: 39.8579
-  },
-  {
-    name: "مركز نحو التميز — فرع صكوك",
-    desc: "جلسات مذاكرة جماعية + قاعات هادئة + إنترنت سريع.",
-    url: "https://maps.google.com/?q=21.43,39.82",
-    locationHint: "صكوك - جدة",
-    lat: 21.43,
-    lng: 39.82
-  },
-  {
-    name: "مركز نحو التميز — فرع لكبيد",
-    desc: "بيئة مركزة للمذاكرة الفردية مع خدمات ضيافة خفيفة.",
-    url: "https://maps.google.com/?q=21.50,39.90",
-    locationHint: "لكبيد - جدة",
-    lat: 21.5,
-    lng: 39.9
   }
 ];
