@@ -73,13 +73,19 @@ export default function ReviewsPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-2">
-                {group.links.map((item) => (
-                  <Button key={item.title} asChild variant="secondary" size="sm">
-                    <a href={item.url} target="_blank" rel="noreferrer">
-                      {item.yearLabel}
-                    </a>
-                  </Button>
-                ))}
+                {group.links.map((item) =>
+                  item.url ? (
+                    <Button key={item.title} asChild variant="secondary" size="sm">
+                      <a href={item.url} target="_blank" rel="noreferrer">
+                        {item.yearLabel}
+                      </a>
+                    </Button>
+                  ) : (
+                    <Button key={item.title} variant="outline" size="sm" disabled>
+                      {t("reviews_coming")}
+                    </Button>
+                  )
+                )}
               </div>
             </SpotlightCard>
           ))}
