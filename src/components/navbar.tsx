@@ -28,10 +28,7 @@ export function Navbar() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
           <Link href="/" className="flex items-center gap-2">
             <span className="text-lg font-semibold text-white">
-              مراجعات أحمد الكوري
-            </span>
-            <span className="hidden text-xs text-white/50 md:inline">
-              Ahmed Study Hub
+              {t("brand_name")}
             </span>
           </Link>
 

@@ -38,7 +38,7 @@ export function MobileMenu({
           >
             <div className="flex items-center justify-between">
               <span className="text-lg font-semibold text-white">
-                Ahmed Study Hub
+                {t("brand_name")}
               </span>
               <Button variant="ghost" size="icon" onClick={onClose}>
                 <X size={20} />

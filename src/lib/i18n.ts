@@ -5,10 +5,11 @@ export type Locale = (typeof locales)[number];
 
 export const translations = {
   ar: {
+    brand_name: "مراجعات أحمد الكوري",
     nav_home: "الرئيسية",
     nav_reviews: "المراجعات",
     nav_summaries: "الملخصات",
-    nav_places: "الأماكن والتطبيقات",
+    nav_places: "أماكن أدرس فيها",
     nav_about: "نبذة",
     nav_admin: "لوحة الإدارة",
     nav_search: "بحث سريع",
@@ -17,7 +18,7 @@ export const translations = {
     command_placeholder: "ابحث عن صفحة أو اختصار...",
     command_empty: "لا توجد نتائج.",
     hero_badge: "جاهز 2026 ✨",
-    hero_title: "مراجعات أحمد الكوري | Ahmed Study Hub",
+    hero_title: "مراجعات أحمد الكوري",
     hero_subtitle:
       "منصة فخمة للمراجعات والملخصات وروابط الدراسة مع بحث سريع وتجربة منظمة.",
     hero_cta_reviews: "ابدأ بالمراجعات",
@@ -33,8 +34,7 @@ export const translations = {
     home_contact_desc: "تواصل مباشرة عبر واتساب لأي استفسار.",
     home_contact_cta: "WhatsApp مباشر",
     reviews_title: "المراجعات",
-    reviews_desc:
-      "روابط مراجعات Telegram منظمة حسب المستوى والفصل مع وصول مباشر.",
+    reviews_desc: "روابط مراجعات Biologie cellulaire للفصل الأول.",
     reviews_level: "المستوى L1",
     reviews_semester_s1: "الفصل S1",
     reviews_semester_s2: "الفصل S2",
@@ -48,8 +48,8 @@ export const translations = {
     filter_year: "السنة",
     filter_term: "الفصل",
     filter_type: "النوع",
-    places_title: "أماكن الدراسة والتطبيقات",
-    places_desc: "حمّل تطبيق جامعتك أو اختر مكانًا مناسبًا للمذاكرة.",
+    places_title: "أماكن أدرس فيها",
+    places_desc: "أماكن موثوقة للمذاكرة بالإضافة إلى تطبيق جامعتك.",
     about_title: "نبذة عن أحمد",
     about_desc: "مصمم تجربة دراسة بتركيز عالي وجودة فاخرة.",
     about_mission: "المهمة",
@@ -59,13 +59,14 @@ export const translations = {
     not_found_title: "الصفحة غير موجودة",
     not_found_desc: "ربما تم نقل الصفحة أو حذفها.",
     not_found_cta: "العودة للرئيسية",
-    footer_tagline: "منصة مراجعات وملخصات وتجربة بحث فخمة للطلاب."
+    footer_tagline: "مراجعات وملخصات مختصرة تساعدك على الدراسة بثقة."
   },
   fr: {
+    brand_name: "Révisions Ahmed Kori",
     nav_home: "Accueil",
     nav_reviews: "Révisions",
     nav_summaries: "Résumés",
-    nav_places: "Lieux & Apps",
+    nav_places: "Lieux d'étude",
     nav_about: "À propos",
     nav_admin: "Admin",
     nav_search: "Recherche rapide",
@@ -74,7 +75,7 @@ export const translations = {
     command_placeholder: "Rechercher une page ou un raccourci...",
     command_empty: "Aucun résultat.",
     hero_badge: "Prêt pour 2026 ✨",
-    hero_title: "Révisions Ahmed Kori | Ahmed Study Hub",
+    hero_title: "Révisions Ahmed Kori",
     hero_subtitle:
       "Une plateforme premium de révisions, résumés et liens d'étude avec recherche rapide et organisation claire.",
     hero_cta_reviews: "Voir les révisions",
@@ -90,8 +91,7 @@ export const translations = {
     home_contact_desc: "Contactez-moi directement sur WhatsApp.",
     home_contact_cta: "WhatsApp direct",
     reviews_title: "Révisions",
-    reviews_desc:
-      "Liens Telegram organisés par niveau et semestre avec accès direct.",
+    reviews_desc: "Liens Biologie cellulaire pour le semestre S1.",
     reviews_level: "Niveau L1",
     reviews_semester_s1: "Semestre S1",
     reviews_semester_s2: "Semestre S2",
@@ -105,8 +105,8 @@ export const translations = {
     filter_year: "Année",
     filter_term: "Semestre",
     filter_type: "Type",
-    places_title: "Lieux & Applications",
-    places_desc: "Télécharge l'app de ton université ou choisis un lieu d'étude.",
+    places_title: "Lieux d'étude",
+    places_desc: "Des lieux fiables pour réviser + l'app de ton université.",
     about_title: "À propos d'Ahmed",
     about_desc: "Concepteur d'expérience d'étude premium.",
     about_mission: "Mission",
@@ -116,7 +116,7 @@ export const translations = {
     not_found_title: "Page introuvable",
     not_found_desc: "La page a été déplacée ou supprimée.",
     not_found_cta: "Retour à l'accueil",
-    footer_tagline: "Plateforme premium de révisions, résumés et recherche rapide."
+    footer_tagline: "Révisions et résumés pour étudier avec confiance."
   }
 } as const;
 

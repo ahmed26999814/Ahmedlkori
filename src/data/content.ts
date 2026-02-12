@@ -41,7 +41,7 @@ export type Place = {
 };
 
 export const siteMeta = {
-  title: "مراجعات أحمد الكوري | Ahmed Study Hub",
+  title: "مراجعات أحمد الكوري",
   description:
     "مركز مراجعات وملخصات وروابط دراسة منظمة لطلاب الجامعة مع تجربة بحث وفلترة احترافية.",
   url: "https://example.com",
@@ -67,66 +67,6 @@ export const telegramReviews: TelegramReview[] = [
     updatedAt: "2026-02-12",
     level: "L1",
     semester: "S1",
-    yearLabel: "2025-2026"
-  },
-  {
-    title: "Découverte de la biologie (S1) — 2024-2025",
-    subject: "Découverte de la biologie",
-    url: "https://t.me/+nT1RJwFG9pBlNDZk",
-    tags: ["S1"],
-    updatedAt: "2026-02-12",
-    level: "L1",
-    semester: "S1",
-    yearLabel: "2024-2025"
-  },
-  {
-    title: "Découverte de la biologie (S1) — 2025-2026",
-    subject: "Découverte de la biologie",
-    url: "https://t.me/+U9b_jKVNMoUyMDI0",
-    tags: ["S1"],
-    updatedAt: "2026-02-12",
-    level: "L1",
-    semester: "S1",
-    yearLabel: "2025-2026"
-  },
-  {
-    title: "Biologie cellulaire — 2024-2025",
-    subject: "Biologie cellulaire",
-    url: "",
-    tags: ["S2", "قريبًا"],
-    updatedAt: "2026-02-12",
-    level: "L1",
-    semester: "S2",
-    yearLabel: "2024-2025"
-  },
-  {
-    title: "Biologie cellulaire — 2025-2026",
-    subject: "Biologie cellulaire",
-    url: "",
-    tags: ["S2", "قريبًا"],
-    updatedAt: "2026-02-12",
-    level: "L1",
-    semester: "S2",
-    yearLabel: "2025-2026"
-  },
-  {
-    title: "Embryologie — 2024-2025",
-    subject: "Embryologie",
-    url: "",
-    tags: ["S2", "قريبًا"],
-    updatedAt: "2026-02-12",
-    level: "L1",
-    semester: "S2",
-    yearLabel: "2024-2025"
-  },
-  {
-    title: "Embryologie — 2025-2026",
-    subject: "Embryologie",
-    url: "",
-    tags: ["S2", "قريبًا"],
-    updatedAt: "2026-02-12",
-    level: "L1",
-    semester: "S2",
     yearLabel: "2025-2026"
   }
 ];
@@ -319,9 +259,17 @@ export const places: Place[] = [
     appStoreUrl: "https://apps.apple.com/mr/app/jamaatak/id6754469286?l=ar",
     playStoreUrl: "https://play.google.com/store/apps/details?id=com.bac.exo",
     url: "https://example.com/university-app",
-    locationHint: "منصة رقمية",
-    lat: 21.3891,
-    lng: 39.8579
+    locationHint: "منصة رقمية"
+  },
+  {
+    name: "مركز نحو التميز — صكوك",
+    desc: "مكان مناسب للمذاكرة وتنظيم الوقت في بيئة هادئة.",
+    url: "https://www.google.com/maps/search/?api=1&query=مركز+نحو+التميز+صكوك"
+  },
+  {
+    name: "مركز نحو التميز — لكبيد",
+    desc: "فرع لكبيد مع مساحات مريحة للمراجعة الجماعية.",
+    url: "https://www.google.com/maps/search/?api=1&query=مركز+نحو+التميز+لكبيد"
   }
 ];
 
