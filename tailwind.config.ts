@@ -11,20 +11,20 @@ const config: Config = {
         glass: "rgba(255, 255, 255, 0.08)",
         stroke: "rgba(255, 255, 255, 0.18)",
         accent: {
-          50: "#ecfeff",
-          100: "#cffafe",
-          200: "#a5f3fc",
-          300: "#67e8f9",
-          400: "#22d3ee",
-          500: "#06b6d4",
-          600: "#0891b2",
-          700: "#0e7490",
-          800: "#155e75",
-          900: "#164e63"
+          50: "#fff7ed",
+          100: "#ffedd5",
+          200: "#fed7aa",
+          300: "#fdba74",
+          400: "#fb923c",
+          500: "#f97316",
+          600: "#ea580c",
+          700: "#c2410c",
+          800: "#9a3412",
+          900: "#7c2d12"
         },
-        sunrise: "#f97316",
+        sunrise: "#f59e0b",
         mint: "#22c55e",
-        rose: "#fb7185"
+        rose: "#0ea5e9"
       },
       fontFamily: {
         display: [
@@ -49,12 +49,12 @@ const config: Config = {
         ]
       },
       boxShadow: {
-        glow: "0 0 40px rgba(59,130,246,0.25)",
+        glow: "0 0 40px rgba(249,115,22,0.3)",
         glass: "0 12px 48px rgba(15, 23, 42, 0.25)",
         soft: "0 10px 30px rgba(15, 23, 42, 0.2)"
       },
       backgroundImage: {
-        "hero-gradient": "radial-gradient(1200px circle at 90% 10%, rgba(34, 211, 238, 0.2), transparent 55%), radial-gradient(900px circle at 10% 20%, rgba(251, 113, 133, 0.18), transparent 50%), linear-gradient(135deg, rgba(10, 12, 20, 0.9), rgba(4, 7, 15, 0.98))",
+        "hero-gradient": "radial-gradient(1200px circle at 85% 15%, rgba(249, 115, 22, 0.22), transparent 55%), radial-gradient(900px circle at 12% 25%, rgba(14, 165, 233, 0.16), transparent 50%), linear-gradient(135deg, rgba(10, 12, 20, 0.9), rgba(6, 8, 14, 0.98))",
         "glass-gradient": "linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.02))",
         "card-noise": "radial-gradient(circle at 1px 1px, rgba(255,255,255,0.08) 1px, transparent 0)"
       },

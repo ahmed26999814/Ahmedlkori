@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, DownloadCloud } from "lucide-react";
+import { BookOpen, FolderOpen } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -35,19 +35,22 @@ export function Hero() {
           </h1>
         </div>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-          <Button asChild variant="glow" size="lg" className="w-full sm:w-auto">
+          <Button
+            asChild
+            size="lg"
+            className="w-full sm:w-auto rounded-2xl bg-gradient-to-r from-accent-500 via-sunrise to-rose text-white shadow-[0_12px_30px_rgba(249,115,22,0.35)] transition hover:-translate-y-0.5 hover:brightness-110"
+          >
             <Link href="/reviews">
-              {t("hero_cta_reviews")} <ArrowUpRight size={18} />
+              {t("hero_cta_reviews")} <BookOpen size={18} />
             </Link>
           </Button>
           <Button
             asChild
-            variant="secondary"
             size="lg"
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto rounded-2xl border border-white/20 bg-white/5 text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-white/10"
           >
             <Link href="/summaries">
-              {t("hero_cta_summaries")} <DownloadCloud size={18} />
+              {t("hero_cta_summaries")} <FolderOpen size={18} />
             </Link>
           </Button>
         </div>
