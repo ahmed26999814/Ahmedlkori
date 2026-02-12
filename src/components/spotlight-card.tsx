@@ -30,7 +30,7 @@ export function SpotlightCard({
       transition={{ type: "spring", stiffness: 200, damping: 18 }}
       className={cn(
         "relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glass backdrop-blur",
-        "before:absolute before:inset-0 before:bg-[radial-gradient(600px_circle_at_var(--x)_var(--y),rgba(59,130,246,0.18),transparent_40%)] before:opacity-0 before:transition-opacity hover:before:opacity-100",
+        "before:pointer-events-none before:absolute before:inset-0 before:bg-[radial-gradient(600px_circle_at_var(--x)_var(--y),rgba(59,130,246,0.18),transparent_40%)] before:opacity-0 before:transition-opacity hover:before:opacity-100",
         "transform-gpu",
         className
       )}
