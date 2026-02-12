@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
+import { useLang } from "@/components/providers/language-provider";
 
 export function MobileMenu({
   open,
@@ -15,6 +16,7 @@ export function MobileMenu({
   onClose: () => void;
 }) {
   const pathname = usePathname();
+  const { t } = useLang();
 
   return (
     <AnimatePresence>
@@ -54,7 +56,7 @@ export function MobileMenu({
                       : "text-white/70 hover:bg-white/5 hover:text-white"
                   }`}
                 >
-                  {link.label}
+                  {t(link.key)}
                 </Link>
               ))}
             </nav>

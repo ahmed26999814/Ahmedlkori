@@ -1,18 +1,16 @@
 ﻿export const navLinks = [
-  { href: "/", label: "الرئيسية" },
-  { href: "/reviews", label: "المراجعات" },
-  { href: "/summaries", label: "الملخصات" },
-  { href: "/places", label: "الأماكن والتطبيقات" },
-  { href: "/contact", label: "تواصل" },
-  { href: "/about", label: "نبذة" }
-];
+  { href: "/", key: "nav_home" },
+  { href: "/reviews", key: "nav_reviews" },
+  { href: "/summaries", key: "nav_summaries" },
+  { href: "/places", key: "nav_places" },
+  { href: "/about", key: "nav_about" }
+] as const;
 
 export const commands = [
-  { id: "home", label: "الرئيسية", href: "/" },
-  { id: "reviews", label: "المراجعات", href: "/reviews" },
-  { id: "summaries", label: "الملخصات", href: "/summaries" },
-  { id: "places", label: "الأماكن والتطبيقات", href: "/places" },
-  { id: "contact", label: "تواصل", href: "/contact" },
-  { id: "about", label: "نبذة", href: "/about" },
-  { id: "admin", label: "لوحة الإدارة", href: "/admin" }
-];
+  { id: "home", key: "nav_home", href: "/" },
+  { id: "reviews", key: "nav_reviews", href: "/reviews" },
+  { id: "summaries", key: "nav_summaries", href: "/summaries" },
+  { id: "places", key: "nav_places", href: "/places" },
+  { id: "about", key: "nav_about", href: "/about" },
+  { id: "admin", key: "nav_admin", href: "/admin" }
+] as const;

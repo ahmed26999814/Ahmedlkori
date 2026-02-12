@@ -6,13 +6,15 @@ import { Menu, Search } from "lucide-react";
 import React from "react";
 import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { LanguageToggle } from "@/components/language-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
 import { ScrollProgress } from "@/components/scroll-progress";
+import { useLang } from "@/components/providers/language-provider";
 
 export function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = React.useState(false);
+  const { t } = useLang();
 
   const openPalette = () => {
     if (typeof window !== "undefined") {
@@ -44,7 +46,7 @@ export function Navbar() {
                     : "text-white/60 hover:text-white"
                 }`}
               >
-                {link.label}
+                {t(link.key)}
               </Link>
             ))}
           </nav>
@@ -57,15 +59,15 @@ export function Navbar() {
               className="hidden md:inline-flex"
             >
               <Search size={16} />
-              بحث سريع
+              {t("nav_search")}
             </Button>
-            <ThemeToggle className="hidden md:flex" />
+            <LanguageToggle />
             <Button
               variant="ghost"
               size="icon"
               className="md:hidden"
               onClick={() => setOpen(true)}
-              aria-label="فتح القائمة"
+              aria-label={t("menu_open")}
             >
               <Menu size={20} />
             </Button>

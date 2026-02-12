@@ -1,7 +1,12 @@
-﻿import Link from "next/link";
+﻿"use client";
+
+import Link from "next/link";
 import { MessageCircle } from "lucide-react";
+import { useLang } from "@/components/providers/language-provider";
 
 export function Footer() {
+  const { t } = useLang();
+
   return (
     <footer className="border-t border-white/10 bg-black/40 py-12">
       <div className="mx-auto flex max-w-6xl flex-col gap-8 px-4 md:flex-row md:items-center md:justify-between md:px-6">
@@ -9,22 +14,20 @@ export function Footer() {
           <h3 className="text-lg font-semibold text-white">
             مراجعات أحمد الكوري | Ahmed Study Hub
           </h3>
-          <p className="text-sm text-white/70">
-            منصة مراجعات وملخصات وتجربة بحث فخمة للطلاب.
-          </p>
+          <p className="text-sm text-white/70">{t("footer_tagline")}</p>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-white/70">
           <Link href="/reviews" className="hover:text-white">
-            المراجعات
+            {t("nav_reviews")}
           </Link>
           <Link href="/summaries" className="hover:text-white">
-            الملخصات
+            {t("nav_summaries")}
           </Link>
           <Link href="/places" className="hover:text-white">
-            أماكن الدراسة
+            {t("nav_places")}
           </Link>
-          <Link href="/contact" className="hover:text-white">
-            تواصل
+          <Link href="/about" className="hover:text-white">
+            {t("nav_about")}
           </Link>
         </div>
         <div className="flex items-center gap-3">

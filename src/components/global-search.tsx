@@ -6,10 +6,12 @@ import { Search } from "lucide-react";
 import { useContent } from "@/components/providers/content-provider";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
+import { useLang } from "@/components/providers/language-provider";
 
 export function GlobalSearch() {
   const { telegramReviews, whatsappGroups, summaries, places } = useContent();
   const [query, setQuery] = React.useState("");
+  const { t } = useLang();
 
   const results = React.useMemo(() => {
     if (!query.trim()) return [] as { label: string; href: string; tag: string }[];
@@ -39,38 +41,34 @@ export function GlobalSearch() {
         item.title.toLowerCase().includes(q) ||
         item.subject.toLowerCase().includes(q)
       ) {
-        items.push({ label: item.title, href: "/summaries", tag: "ملخص" });
+        items.push({ label: item.title, href: "/summaries", tag: t("tag_summary") });
       }
     });
 
     places.forEach((item) => {
       if (item.name.toLowerCase().includes(q)) {
-        items.push({ label: item.name, href: "/places", tag: "مكان" });
+        items.push({ label: item.name, href: "/places", tag: t("tag_place") });
       }
     });
 
     return items.slice(0, 8);
-  }, [query, telegramReviews, whatsappGroups, summaries, places]);
+  }, [query, telegramReviews, whatsappGroups, summaries, places, t]);
 
   return (
     <section className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-glass backdrop-blur">
       <div className="flex items-center gap-2 text-white/70">
         <Search size={18} />
-        <span className="text-sm">بحث شامل في كل المحتوى</span>
+        <span className="text-sm">{t("search_title")}</span>
       </div>
       <div className="mt-4">
         <Input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="ابحث عن مادة، ملف، مكان..."
+          placeholder={t("search_placeholder")}
         />
       </div>
       <div className="mt-4 space-y-3">
-        {!query && (
-          <div className="text-xs text-white/50">
-            جرّب: فيزياء، تشريح، شبكات...
-          </div>
-        )}
+        {!query && <div className="text-xs text-white/50">{t("search_tip")}</div>}
         {results.map((item) => (
           <Link
             key={`${item.label}-${item.tag}`}

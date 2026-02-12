@@ -6,8 +6,11 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { fadeUp } from "@/lib/motion";
+import { useLang } from "@/components/providers/language-provider";
 
 export function Hero() {
+  const { t } = useLang();
+
   return (
     <section className="relative overflow-hidden rounded-[32px] border border-white/10 bg-white/5 p-8 shadow-glass backdrop-blur md:p-12">
       <motion.div
@@ -16,32 +19,31 @@ export function Hero() {
         variants={fadeUp}
         className="space-y-6"
       >
-        <Badge tone="accent">جاهز 2026 ✨</Badge>
+        <Badge tone="accent">{t("hero_badge")}</Badge>
         <h1 className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-          مراجعات أحمد الكوري | Ahmed Study Hub
+          {t("hero_title")}
         </h1>
         <p className="max-w-2xl text-sm text-white/70 md:text-base">
-          مركز فخم للمراجعات والملخصات وروابط الدراسة مع بحث سريع، فلترة
-          متقدمة، وتجربة مستخدم مبنية لتختصر وقتك وتضاعف تركيزك.
+          {t("hero_subtitle")}
         </p>
-        <div className="flex flex-wrap items-center gap-3">
-          <Button asChild variant="glow" size="lg">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Button asChild variant="glow" size="lg" className="w-full sm:w-auto">
             <Link href="/reviews">
-              ابدأ بالمراجعات <ArrowUpRight size={18} />
+              {t("hero_cta_reviews")} <ArrowUpRight size={18} />
             </Link>
           </Button>
-          <Button asChild variant="secondary" size="lg">
+          <Button asChild variant="secondary" size="lg" className="w-full sm:w-auto">
             <Link href="/summaries">
-              تصفح الملخصات <DownloadCloud size={18} />
+              {t("hero_cta_summaries")} <DownloadCloud size={18} />
             </Link>
           </Button>
         </div>
-        <div className="flex flex-wrap gap-3 text-xs text-white/60">
+        <div className="flex flex-col gap-2 text-xs text-white/60 sm:flex-row sm:items-center">
           <div className="flex items-center gap-2">
             <Sparkles size={14} />
-            بحث لحظي + Command Palette (Ctrl + K)
+            {t("hero_hint_1")}
           </div>
-          <div>فلترة حسب المادة + السنة + الفصل + النوع</div>
+          <div>{t("hero_hint_2")}</div>
         </div>
       </motion.div>
       <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent-400/20 blur-[70px]" />

@@ -9,9 +9,11 @@ import { FeaturedCarousel } from "@/components/featured-carousel";
 import { SkeletonGrid } from "@/components/skeleton-grid";
 import { useContent } from "@/components/providers/content-provider";
 import { uniqueValues, sortByUpdatedAt } from "@/lib/utils";
+import { useLang } from "@/components/providers/language-provider";
 
 export default function SummariesPage() {
   const { summaries } = useContent();
+  const { t, lang } = useLang();
   const [query, setQuery] = React.useState("");
   const [subject, setSubject] = React.useState("");
   const [year, setYear] = React.useState("");
@@ -59,10 +61,7 @@ export default function SummariesPage() {
 
   return (
     <div className="space-y-8">
-      <PageHeader
-        title="الملخصات والملفات"
-        description="ملخصات PDF وWord وصور مع معاينة وتنزيل سريع وفلاتر قوية."
-      />
+      <PageHeader title={t("summaries_title")} description={t("summaries_desc")} />
 
       {featured.length ? <FeaturedCarousel items={featured} /> : null}
 
@@ -70,10 +69,10 @@ export default function SummariesPage() {
         query={query}
         onQueryChange={setQuery}
         filters={[
-          { id: "subject", label: "المادة", options: subjects, value: subject },
-          { id: "year", label: "السنة", options: years, value: year },
-          { id: "term", label: "الفصل", options: terms, value: term },
-          { id: "type", label: "النوع", options: types, value: type }
+          { id: "subject", label: t("filter_subject"), options: subjects, value: subject },
+          { id: "year", label: t("filter_year"), options: years, value: year },
+          { id: "term", label: t("filter_term"), options: terms, value: term },
+          { id: "type", label: t("filter_type"), options: types, value: type }
         ]}
         onFilterChange={(id, value) => {
           if (id === "subject") setSubject(value);
@@ -85,7 +84,7 @@ export default function SummariesPage() {
 
       <div className="flex items-center justify-between">
         <div className="text-sm text-white/60">
-          عرض {filtered.length} ملف
+          {lang === "fr" ? `${filtered.length} fichiers` : `عرض ${filtered.length} ملف`}
         </div>
         <div className="flex items-center gap-2">
           <button

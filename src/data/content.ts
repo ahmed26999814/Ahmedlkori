@@ -4,6 +4,9 @@
   url: string;
   tags: string[];
   updatedAt: string;
+  level: "L1";
+  semester: "S1" | "S2";
+  yearLabel: string;
 };
 
 export type WhatsAppGroup = {
@@ -50,29 +53,81 @@ export const telegramReviews: TelegramReview[] = [
     title: "Biologie cellulaire — 2024-2025",
     subject: "Biologie cellulaire",
     url: "https://t.me/+lYx1rhWxXvUwOGFk",
-    tags: ["سنة 2024-2025"],
-    updatedAt: "2026-02-12"
+    tags: ["S1"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S1",
+    yearLabel: "2024-2025"
   },
   {
     title: "Biologie cellulaire — 2025-2026",
     subject: "Biologie cellulaire",
     url: "https://t.me/+4NiZXL4U3YRiMzRk",
-    tags: ["سنة 2025-2026"],
-    updatedAt: "2026-02-12"
+    tags: ["S1"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S1",
+    yearLabel: "2025-2026"
   },
   {
     title: "Découverte de la biologie (S1) — 2024-2025",
-    subject: "Découverte de la biologie (S1)",
+    subject: "Découverte de la biologie",
     url: "https://t.me/+nT1RJwFG9pBlNDZk",
-    tags: ["S1", "سنة 2024-2025"],
-    updatedAt: "2026-02-12"
+    tags: ["S1"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S1",
+    yearLabel: "2024-2025"
   },
   {
     title: "Découverte de la biologie (S1) — 2025-2026",
-    subject: "Découverte de la biologie (S1)",
+    subject: "Découverte de la biologie",
     url: "https://t.me/+U9b_jKVNMoUyMDI0",
-    tags: ["S1", "سنة 2025-2026"],
-    updatedAt: "2026-02-12"
+    tags: ["S1"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S1",
+    yearLabel: "2025-2026"
+  },
+  {
+    title: "Biologie cellulaire — 2024-2025",
+    subject: "Biologie cellulaire",
+    url: "",
+    tags: ["S2", "قريبًا"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2024-2025"
+  },
+  {
+    title: "Biologie cellulaire — 2025-2026",
+    subject: "Biologie cellulaire",
+    url: "",
+    tags: ["S2", "قريبًا"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2025-2026"
+  },
+  {
+    title: "Embryologie — 2024-2025",
+    subject: "Embryologie",
+    url: "",
+    tags: ["S2", "قريبًا"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2024-2025"
+  },
+  {
+    title: "Embryologie — 2025-2026",
+    subject: "Embryologie",
+    url: "",
+    tags: ["S2", "قريبًا"],
+    updatedAt: "2026-02-12",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2025-2026"
   }
 ];
 
@@ -269,3 +324,5 @@ export const places: Place[] = [
     lng: 39.8579
   }
 ];
+
+

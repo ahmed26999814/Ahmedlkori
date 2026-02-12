@@ -1,9 +1,7 @@
 ﻿"use client";
 
 import React from "react";
-import { Copy, ExternalLink, QrCode } from "lucide-react";
-import { toast } from "sonner";
-import { QRCodeCanvas } from "qrcode.react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SpotlightCard } from "@/components/spotlight-card";
@@ -21,13 +19,6 @@ export function ReviewCard({
   tags?: string[];
   type: "Telegram" | "WhatsApp";
 }) {
-  const [showQR, setShowQR] = React.useState(false);
-
-  const copy = async () => {
-    await navigator.clipboard.writeText(url);
-    toast.success("تم نسخ الرابط");
-  };
-
   return (
     <SpotlightCard className="space-y-4">
       <div className="flex items-start justify-between">
@@ -46,28 +37,11 @@ export function ReviewCard({
           ))}
         </div>
       ) : null}
-      <div className="flex flex-wrap items-center gap-2">
-        <Button asChild variant="secondary" size="sm">
-          <a href={url} target="_blank" rel="noreferrer">
-            فتح الرابط <ExternalLink size={14} />
-          </a>
-        </Button>
-        <Button variant="ghost" size="sm" onClick={copy}>
-          نسخ <Copy size={14} />
-        </Button>
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setShowQR((prev) => !prev)}
-        >
-          QR <QrCode size={14} />
-        </Button>
-      </div>
-      {showQR ? (
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-          <QRCodeCanvas value={url} size={120} bgColor="#0b0c10" fgColor="#ffffff" />
-        </div>
-      ) : null}
+      <Button asChild variant="secondary" size="sm">
+        <a href={url} target="_blank" rel="noreferrer">
+          فتح الرابط <ExternalLink size={14} />
+        </a>
+      </Button>
     </SpotlightCard>
   );
 }
