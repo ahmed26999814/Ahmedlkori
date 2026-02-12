@@ -29,7 +29,7 @@ export function MobileMenu({
           onClick={onClose}
         >
           <motion.div
-            className="absolute left-0 top-0 h-full w-[80%] max-w-sm border-r border-white/10 bg-[#0b0c10] p-6"
+            className="mobile-drawer absolute left-0 top-0 h-full w-[80%] max-w-sm border-r border-white/10 bg-[#0b0c10] p-6"
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
@@ -50,7 +50,7 @@ export function MobileMenu({
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className={`rounded-2xl px-4 py-3 text-sm transition ${
+                  className={`mobile-drawer-link rounded-2xl px-4 py-3 text-sm transition ${
                     pathname === link.href
                       ? "bg-white/10 text-white"
                       : "text-white/70 hover:bg-white/5 hover:text-white"

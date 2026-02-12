@@ -60,7 +60,9 @@ export const translations = {
     not_found_title: "الصفحة غير موجودة",
     not_found_desc: "ربما تم نقل الصفحة أو حذفها.",
     not_found_cta: "العودة للرئيسية",
-    footer_tagline: "مراجعات وملخصات مختصرة تساعدك على الدراسة بثقة."
+    footer_tagline: "مراجعات وملخصات مختصرة تساعدك على الدراسة بثقة.",
+    footer_extra:
+      "كل الروابط مرتبة حسب المادة والفصل لتسهيل الوصول. إذا واجهت مشكلة في أي رابط تواصل معي عبر واتساب."
   },
   fr: {
     brand_name: "Révisions Ahmed Kori",
@@ -118,7 +120,9 @@ export const translations = {
     not_found_title: "Page introuvable",
     not_found_desc: "La page a été déplacée ou supprimée.",
     not_found_cta: "Retour à l'accueil",
-    footer_tagline: "Révisions et résumés pour étudier avec confiance."
+    footer_tagline: "Révisions et résumés pour étudier avec confiance.",
+    footer_extra:
+      "Tous les liens sont classés par matière et semestre pour un accès rapide. Contactez-moi sur WhatsApp en cas de problème."
   }
 } as const;
 

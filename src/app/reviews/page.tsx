@@ -33,7 +33,7 @@ export default function ReviewsPage() {
 
   return (
     <div className="space-y-8">
-      <PageHeader title={t("reviews_title")} description={t("reviews_desc")} />
+      <PageHeader title={t("reviews_title")} description="" />
 
       <div className="flex flex-wrap items-center gap-3">
         <Badge tone="accent">{t("reviews_level")}</Badge>
