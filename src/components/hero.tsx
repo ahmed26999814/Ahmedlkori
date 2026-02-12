@@ -18,7 +18,7 @@ export function Hero() {
       >
         <Badge tone="accent">جاهز 2026 ✨</Badge>
         <h1 className="text-3xl font-semibold leading-tight text-white md:text-5xl">
-          مراجعات أحمد | Ahmed Study Hub
+          مراجعات أحمد الكوري | Ahmed Study Hub
         </h1>
         <p className="max-w-2xl text-sm text-white/70 md:text-base">
           مركز فخم للمراجعات والملخصات وروابط الدراسة مع بحث سريع، فلترة

@@ -36,7 +36,7 @@ export type Place = {
 };
 
 export const siteMeta = {
-  title: "مراجعات أحمد | Ahmed Study Hub",
+  title: "مراجعات أحمد الكوري | Ahmed Study Hub",
   description:
     "مركز مراجعات وملخصات وروابط دراسة منظمة لطلاب الجامعة مع تجربة بحث وفلترة احترافية.",
   url: "https://example.com",
