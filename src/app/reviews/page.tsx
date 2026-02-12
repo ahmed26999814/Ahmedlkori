@@ -10,7 +10,7 @@ import { useContent } from "@/components/providers/content-provider";
 import { useLang } from "@/components/providers/language-provider";
 
 export default function ReviewsPage() {
-  const { telegramReviews } = useContent();
+  const { telegramReviews, whatsappGroups } = useContent();
   const { t, lang } = useLang();
   const [semester, setSemester] = React.useState<"S1" | "S2">("S1");
 
@@ -98,6 +98,27 @@ export default function ReviewsPage() {
             : "لا توجد روابط متاحة حاليًا."}
         </div>
       )}
+
+      {whatsappGroups.length ? (
+        <section className="space-y-3">
+          <h3 className="text-lg font-semibold text-white">
+            {t("reviews_whatsapp_title")}
+          </h3>
+          <SpotlightCard className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
+            <div>
+              <div className="text-white">{whatsappGroups[0].title}</div>
+              <div className="text-sm text-white/60">
+                {t("reviews_whatsapp_desc")}
+              </div>
+            </div>
+            <Button asChild variant="secondary">
+              <a href={whatsappGroups[0].url}>
+                {t("reviews_open")}
+              </a>
+            </Button>
+          </SpotlightCard>
+        </section>
+      ) : null}
     </div>
   );
 }
