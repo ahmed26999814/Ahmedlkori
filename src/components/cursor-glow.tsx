@@ -8,15 +8,37 @@ export function CursorGlow() {
   const y = useMotionValue(-100);
   const smoothX = useSpring(x, { stiffness: 120, damping: 25 });
   const smoothY = useSpring(y, { stiffness: 120, damping: 25 });
+  const [enabled, setEnabled] = React.useState(false);
 
   React.useEffect(() => {
+    const media = window.matchMedia("(pointer: fine) and (min-width: 1024px)");
+    const update = () => setEnabled(media.matches);
+    update();
+    if (media.addEventListener) {
+      media.addEventListener("change", update);
+    } else {
+      media.addListener(update);
+    }
+    return () => {
+      if (media.removeEventListener) {
+        media.removeEventListener("change", update);
+      } else {
+        media.removeListener(update);
+      }
+    };
+  }, []);
+
+  React.useEffect(() => {
+    if (!enabled) return;
     const handler = (event: MouseEvent) => {
       x.set(event.clientX - 120);
       y.set(event.clientY - 120);
     };
     window.addEventListener("pointermove", handler);
     return () => window.removeEventListener("pointermove", handler);
-  }, [x, y]);
+  }, [x, y, enabled]);
+
+  if (!enabled) return null;
 
   return (
     <motion.div

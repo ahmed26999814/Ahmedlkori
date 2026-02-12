@@ -7,6 +7,7 @@ import { X } from "lucide-react";
 import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useLang } from "@/components/providers/language-provider";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function MobileMenu({
   open,
@@ -60,6 +61,9 @@ export function MobileMenu({
                 </Link>
               ))}
             </nav>
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <ThemeToggle />
+            </div>
           </motion.div>
         </motion.div>
       ) : null}

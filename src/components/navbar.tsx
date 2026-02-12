@@ -8,7 +8,7 @@ import { navLinks } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/language-toggle";
 import { MobileMenu } from "@/components/mobile-menu";
-import { ScrollProgress } from "@/components/scroll-progress";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { useLang } from "@/components/providers/language-provider";
 
 export function Navbar() {
@@ -58,6 +58,7 @@ export function Navbar() {
               <Search size={16} />
               {t("nav_search")}
             </Button>
+            <ThemeToggle className="hidden md:flex" />
             <LanguageToggle />
             <Button
               variant="ghost"
@@ -70,7 +71,6 @@ export function Navbar() {
             </Button>
           </div>
         </div>
-        <ScrollProgress />
       </div>
       <MobileMenu open={open} onClose={() => setOpen(false)} />
     </header>

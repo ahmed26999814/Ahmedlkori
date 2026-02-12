@@ -1,6 +1,7 @@
 ﻿"use client";
 
 import React from "react";
+import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -84,7 +85,7 @@ export default function ReviewsPage() {
                       size="sm"
                       onClick={() => openLink(item.url)}
                     >
-                      {item.yearLabel}
+                      {item.yearLabel} <ExternalLink size={14} />
                     </Button>
                   ) : (
                     <Button key={item.title} variant="outline" size="sm" disabled>

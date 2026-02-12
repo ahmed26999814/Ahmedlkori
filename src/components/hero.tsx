@@ -20,7 +20,7 @@ export function Hero() {
         variants={fadeUp}
         className="space-y-6"
       >
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
           <div className="relative h-12 w-12 overflow-hidden rounded-full border border-white/15 bg-white/5 shadow-soft">
             <Image
               src="/Logo.jpg"

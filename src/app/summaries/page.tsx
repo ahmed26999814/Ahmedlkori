@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { SpotlightCard } from "@/components/spotlight-card";
@@ -75,7 +76,7 @@ export default function SummariesPage() {
                               size="sm"
                               onClick={() => openLink(item.url)}
                             >
-                              {item.title}
+                              {item.title} <ExternalLink size={14} />
                             </Button>
                           ) : (
                             <Button key={item.title} variant="outline" size="sm" disabled>
