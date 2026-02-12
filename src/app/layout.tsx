@@ -13,13 +13,13 @@ import { siteMeta } from "@/data/content";
 import { Analytics } from "@vercel/analytics/react";
 
 const cairo = Cairo({
-  subsets: ["arabic"],
+  subsets: ["arabic", "latin"],
   variable: "--font-cairo",
   display: "swap"
 });
 
 const plex = IBM_Plex_Sans_Arabic({
-  subsets: ["arabic"],
+  subsets: ["arabic", "latin"],
   variable: "--font-plex",
   weight: ["300", "400", "500", "600", "700"],
   display: "swap"

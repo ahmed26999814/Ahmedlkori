@@ -27,8 +27,26 @@ const config: Config = {
         rose: "#f43f5e"
       },
       fontFamily: {
-        display: ["var(--font-cairo)", "system-ui", "sans-serif"],
-        body: ["var(--font-plex)", "system-ui", "sans-serif"]
+        display: [
+          "var(--font-cairo)",
+          "Cairo",
+          "IBM Plex Sans Arabic",
+          "Noto Sans Arabic",
+          "Segoe UI",
+          "Tahoma",
+          "Arial",
+          "sans-serif"
+        ],
+        body: [
+          "var(--font-plex)",
+          "IBM Plex Sans Arabic",
+          "Cairo",
+          "Noto Sans Arabic",
+          "Segoe UI",
+          "Tahoma",
+          "Arial",
+          "sans-serif"
+        ]
       },
       boxShadow: {
         glow: "0 0 40px rgba(59,130,246,0.25)",
