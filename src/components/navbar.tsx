@@ -58,7 +58,7 @@ export function Navbar() {
               <Search size={16} />
               {t("nav_search")}
             </Button>
-            <ThemeToggle className="hidden md:flex" />
+            <ThemeToggle />
             <LanguageToggle />
             <Button
               variant="ghost"
