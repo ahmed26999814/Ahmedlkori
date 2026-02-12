@@ -29,8 +29,10 @@ export type SummaryFile = {
 export type Place = {
   name: string;
   desc: string;
-  url: string;
-  locationHint: string;
+  url?: string;
+  locationHint?: string;
+  appStoreUrl?: string;
+  playStoreUrl?: string;
   lat?: number;
   lng?: number;
 };
@@ -259,6 +261,8 @@ export const places: Place[] = [
   {
     name: "تطبيق جامعتك",
     desc: "بوابتك الرسمية للمحاضرات والموارد والاختبارات.",
+    appStoreUrl: "https://apps.apple.com/mr/app/jamaatak/id6754469286?l=ar",
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.bac.exo",
     url: "https://example.com/university-app",
     locationHint: "منصة رقمية",
     lat: 21.3891,

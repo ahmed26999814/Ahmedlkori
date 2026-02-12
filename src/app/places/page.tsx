@@ -10,8 +10,8 @@ export default function PlacesPage() {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="أماكن الدراسة"
-        description="اختر المكان المناسب لمذاكرتك أو تواصل عبر تطبيق جامعتك."
+        title="أماكن الدراسة والتطبيقات"
+        description="حمّل تطبيق جامعتك أو اختر مكانًا مناسبًا للمذاكرة."
       />
 
       <div className="grid gap-4 md:grid-cols-3">
