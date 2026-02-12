@@ -1,4 +1,4 @@
-﻿import { Navigation, Smartphone } from "lucide-react";
+import { Navigation, Phone, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SpotlightCard } from "@/components/spotlight-card";
 
@@ -7,16 +7,19 @@ export function PlaceCard({
   desc,
   url,
   appStoreUrl,
-  playStoreUrl
+  playStoreUrl,
+  phones
 }: {
   name: string;
   desc: string;
   url?: string;
   appStoreUrl?: string;
   playStoreUrl?: string;
+  phones?: string[];
   locationHint?: string;
 }) {
   const hasStores = Boolean(appStoreUrl || playStoreUrl);
+  const hasPhones = Boolean(phones?.length);
 
   return (
     <SpotlightCard className="space-y-4">
@@ -40,6 +43,16 @@ export function PlaceCard({
               </a>
             </Button>
           ) : null}
+        </div>
+      ) : hasPhones ? (
+        <div className="flex flex-wrap gap-2">
+          {phones?.map((phone) => (
+            <Button key={phone} asChild variant="secondary" size="sm">
+              <a href={`tel:${phone}`}>
+                {phone} <Phone size={14} />
+              </a>
+            </Button>
+          ))}
         </div>
       ) : url ? (
         <Button asChild variant="secondary" size="sm">

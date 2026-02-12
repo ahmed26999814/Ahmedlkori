@@ -36,6 +36,7 @@ export type Place = {
   locationHint?: string;
   appStoreUrl?: string;
   playStoreUrl?: string;
+  phones?: string[];
   lat?: number;
   lng?: number;
 };
@@ -170,12 +171,12 @@ export const places: Place[] = [
   {
     name: "مركز نحو التميز — صكوك",
     desc: "مكان مناسب للمذاكرة وتنظيم الوقت في بيئة هادئة.",
-    url: "https://www.google.com/maps/search/?api=1&query=مركز+نحو+التميز+صكوك"
+    phones: ["41852127"]
   },
   {
     name: "مركز نحو التميز — لكبيد",
     desc: "فرع لكبيد مع مساحات مريحة للمراجعة الجماعية.",
-    url: "https://www.google.com/maps/search/?api=1&query=مركز+نحو+التميز+لكبيد"
+    phones: ["43585926"]
   }
 ];
 
