@@ -122,6 +122,39 @@ export const summaries: SummaryFile[] = [
     tags: ["S1", "مجلد", "Biologie"],
     featured: true,
     updatedAt: "2026-02-12"
+  },
+  {
+    title: "ملفات Découverte de la biologie (S1) — قريبًا",
+    subject: "Découverte de la biologie",
+    type: "folder",
+    url: "",
+    size: "قريبًا",
+    year: 2024,
+    term: "الأول",
+    tags: ["S1", "قريبًا"],
+    updatedAt: "2026-02-12"
+  },
+  {
+    title: "ملفات Biologie cellulaire (S2) — قريبًا",
+    subject: "Biologie cellulaire",
+    type: "folder",
+    url: "",
+    size: "قريبًا",
+    year: 2025,
+    term: "الثاني",
+    tags: ["S2", "قريبًا"],
+    updatedAt: "2026-02-12"
+  },
+  {
+    title: "ملفات Embryologie (S2) — قريبًا",
+    subject: "Embryologie",
+    type: "folder",
+    url: "",
+    size: "قريبًا",
+    year: 2025,
+    term: "الثاني",
+    tags: ["S2", "قريبًا"],
+    updatedAt: "2026-02-12"
   }
 ];
 

@@ -12,6 +12,9 @@ export default function ReviewsPage() {
   const { telegramReviews } = useContent();
   const { t, lang } = useLang();
   const [semester, setSemester] = React.useState<"S1" | "S2">("S1");
+  const openLink = React.useCallback((url: string) => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  }, []);
 
   const grouped = React.useMemo(() => {
     const items = telegramReviews.filter(
@@ -75,10 +78,13 @@ export default function ReviewsPage() {
               <div className="flex flex-wrap gap-2">
                 {group.links.map((item) =>
                   item.url ? (
-                    <Button key={item.title} asChild variant="secondary" size="sm">
-                      <a href={item.url} target="_blank" rel="noreferrer">
-                        {item.yearLabel}
-                      </a>
+                    <Button
+                      key={item.title}
+                      variant="secondary"
+                      size="sm"
+                      onClick={() => openLink(item.url)}
+                    >
+                      {item.yearLabel}
                     </Button>
                   ) : (
                     <Button key={item.title} variant="outline" size="sm" disabled>
