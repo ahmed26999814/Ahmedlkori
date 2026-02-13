@@ -5,6 +5,8 @@ import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { SpotlightCard } from "@/components/spotlight-card";
+import { FeaturedCarousel } from "@/components/featured-carousel";
+import { QrDialog } from "@/components/qr-dialog";
 import { useContent } from "@/components/providers/content-provider";
 import { useLang } from "@/components/providers/language-provider";
 
@@ -12,10 +14,19 @@ export default function SummariesPage() {
   const { summaries } = useContent();
   const { t, lang } = useLang();
 
+  const featured = React.useMemo(
+    () => summaries.filter((item) => item.featured),
+    [summaries]
+  );
+
   const groupedByTerm = React.useMemo(() => {
-    const terms = ["الأول", "الثاني"];
+    const terms = [
+      { key: "الأول", label: t("summaries_term_s1") },
+      { key: "الثاني", label: t("summaries_term_s2") }
+    ];
+
     return terms.map((term) => {
-      const items = summaries.filter((item) => item.term === term);
+      const items = summaries.filter((item) => item.term === term.key);
       const map = new Map<string, typeof items>();
       items.forEach((item) => {
         if (!map.has(item.subject)) {
@@ -31,26 +42,22 @@ export default function SummariesPage() {
         }))
       };
     });
-  }, [summaries]);
+  }, [summaries, t]);
 
   return (
     <div className="space-y-8">
       <PageHeader title={t("summaries_title")} description={t("summaries_desc")} />
 
+      {featured.length ? <FeaturedCarousel items={featured} /> : null}
+
       {groupedByTerm.some((term) => term.subjects.length) ? (
         <div className="space-y-8">
           {groupedByTerm.map((termGroup) =>
             termGroup.subjects.length ? (
-              <section key={termGroup.term} className="space-y-4">
+              <section key={termGroup.term.key} className="space-y-4">
                 <div className="flex items-center gap-3">
                   <span className="rounded-full border border-white/10 bg-white/5 px-4 py-1 text-xs text-white/70">
-                    {termGroup.term === "الأول"
-                      ? lang === "fr"
-                        ? "Semestre S1"
-                        : "الفصل S1"
-                      : lang === "fr"
-                      ? "Semestre S2"
-                      : "الفصل S2"}
+                    {termGroup.term.label}
                   </span>
                 </div>
                 <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -67,11 +74,14 @@ export default function SummariesPage() {
                       <div className="flex flex-wrap gap-2">
                         {group.files.map((item) =>
                           item.url ? (
-                            <Button key={item.title} asChild variant="secondary" size="sm">
-                              <a href={item.url}>
-                                {item.title} <ExternalLink size={14} />
-                              </a>
-                            </Button>
+                            <div key={item.title} className="flex items-center gap-2">
+                              <Button asChild variant="secondary" size="sm">
+                                <a href={item.url}>
+                                  {item.title} <ExternalLink size={14} />
+                                </a>
+                              </Button>
+                              <QrDialog url={item.url} />
+                            </div>
                           ) : (
                             <Button key={item.title} variant="outline" size="sm" disabled>
                               {lang === "fr" ? "Bientôt" : "قريبًا"}

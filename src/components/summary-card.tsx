@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SpotlightCard } from "@/components/spotlight-card";
 import { FilePreviewModal } from "@/components/file-preview-modal";
+import { QrDialog } from "@/components/qr-dialog";
 import { formatDate } from "@/lib/utils";
 import { useLang } from "@/components/providers/language-provider";
 
@@ -71,11 +72,14 @@ export function SummaryCard({
         </div>
         <div className="flex flex-wrap items-center gap-2">
           {type === "folder" ? (
-            <Button asChild variant="secondary" size="sm">
-              <a href={url} target="_blank" rel="noreferrer">
-                {lang === "fr" ? "Ouvrir" : "فتح المجلد"} <Eye size={14} />
-              </a>
-            </Button>
+            <>
+              <Button asChild variant="secondary" size="sm">
+                <a href={url} target="_blank" rel="noreferrer">
+                  {lang === "fr" ? "Ouvrir" : "فتح المجلد"} <Eye size={14} />
+                </a>
+              </Button>
+              <QrDialog url={url} />
+            </>
           ) : (
             <>
               <Button variant="secondary" size="sm" onClick={() => setOpen(true)}>
@@ -86,6 +90,7 @@ export function SummaryCard({
                   {lang === "fr" ? "Télécharger" : "تحميل"} <Download size={14} />
                 </a>
               </Button>
+              <QrDialog url={url} />
             </>
           )}
           <div className="ml-auto flex items-center gap-2 text-xs text-white/60">

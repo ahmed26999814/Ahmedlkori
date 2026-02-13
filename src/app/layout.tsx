@@ -4,10 +4,10 @@ import "./globals.css";
 import { Providers } from "@/components/providers/providers";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
-import { CommandPalette } from "@/components/command-palette";
 import { BackToTop } from "@/components/back-to-top";
 import { AnimatedBackground } from "@/components/animated-background";
 import { CursorGlow } from "@/components/cursor-glow";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { Toaster } from "sonner";
 import { siteMeta } from "@/data/content";
 import { Analytics } from "@vercel/analytics/react";
@@ -53,6 +53,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={`${cairo.variable} ${plex.variable}`}>
       <body className="min-h-screen bg-ink font-body text-white antialiased">
         <Providers>
+          <SmoothScroll />
           <AnimatedBackground />
           <CursorGlow />
           <Navbar />
@@ -60,7 +61,6 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
-          <CommandPalette />
           <BackToTop />
           <Toaster richColors position="bottom-center" />
           <Analytics />

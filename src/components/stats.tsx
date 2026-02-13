@@ -1,7 +1,8 @@
-﻿"use client";
+"use client";
 
-import { animate, motion, useMotionValue, useTransform } from "framer-motion";
 import React from "react";
+import CountUp from "react-countup";
+import { useInView } from "react-intersection-observer";
 import { Badge } from "@/components/ui/badge";
 
 const stats = [
@@ -11,35 +12,31 @@ const stats = [
   { label: "أماكن مذاكرة", value: 3 }
 ];
 
-function StatValue({ value }: { value: number }) {
-  const motionValue = useMotionValue(0);
-  const rounded = useTransform(motionValue, (latest) => Math.round(latest));
-
-  React.useEffect(() => {
-    const controls = animate(motionValue, value, { duration: 1.2 });
-    return controls.stop;
-  }, [motionValue, value]);
-
-  return <motion.span>{rounded}</motion.span>;
-}
-
 export function Stats() {
   return (
     <section className="grid gap-4 md:grid-cols-4">
       {stats.map((stat) => (
-        <div
-          key={stat.label}
-          className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center shadow-soft"
-        >
-          <Badge tone="muted" className="mb-3">
-            إحصائيات
-          </Badge>
-          <div className="text-3xl font-semibold text-white">
-            <StatValue value={stat.value} />+
-          </div>
-          <div className="mt-2 text-xs text-white/60">{stat.label}</div>
-        </div>
+        <StatCard key={stat.label} label={stat.label} value={stat.value} />
       ))}
     </section>
+  );
+}
+
+function StatCard({ label, value }: { label: string; value: number }) {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  return (
+    <div
+      ref={ref}
+      className="rounded-3xl border border-white/10 bg-white/5 p-5 text-center shadow-soft"
+    >
+      <Badge tone="muted" className="mb-3">
+        إحصائيات
+      </Badge>
+      <div className="text-3xl font-semibold text-white">
+        {inView ? <CountUp end={value} duration={1.2} /> : 0}+
+      </div>
+      <div className="mt-2 text-xs text-white/60">{label}</div>
+    </div>
   );
 }

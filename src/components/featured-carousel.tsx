@@ -6,20 +6,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SummaryCard } from "@/components/summary-card";
 import { Button } from "@/components/ui/button";
 import { SummaryFile } from "@/data/content";
+import { useLang } from "@/components/providers/language-provider";
 
 export function FeaturedCarousel({ items }: { items: SummaryFile[] }) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
+  const { t } = useLang();
 
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-4">
       <div className="mb-4 flex items-center justify-between">
-        <h3 className="text-lg font-semibold text-white">المميز هذا الأسبوع</h3>
+        <h3 className="text-lg font-semibold text-white">{t("featured_title")}</h3>
         <div className="flex items-center gap-2">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => emblaApi?.scrollPrev()}
-            aria-label="السابق"
+            aria-label={t("featured_prev")}
           >
             <ChevronRight size={18} />
           </Button>
@@ -27,7 +29,7 @@ export function FeaturedCarousel({ items }: { items: SummaryFile[] }) {
             variant="ghost"
             size="icon"
             onClick={() => emblaApi?.scrollNext()}
-            aria-label="التالي"
+            aria-label={t("featured_next")}
           >
             <ChevronLeft size={18} />
           </Button>
