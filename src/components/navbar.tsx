@@ -27,10 +27,6 @@ export function Navbar() {
       <div className="relative border-b border-white/10 bg-black/50 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 md:px-6">
           <Link href="/" className="group flex items-center gap-3">
-            <span className="relative flex h-10 w-10 items-center justify-center rounded-2xl border border-white/15 bg-white/10 text-xs font-semibold text-white shadow-soft">
-              AK
-              <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-accent-400 shadow-glow" />
-            </span>
             <span className="relative text-lg font-semibold md:text-xl">
               <span className="absolute -inset-x-2 -inset-y-2 rounded-full bg-accent-500/20 blur-2xl opacity-0 transition group-hover:opacity-100" />
               <span className="relative bg-gradient-to-r from-white via-accent-100 to-sunrise bg-clip-text text-transparent">
