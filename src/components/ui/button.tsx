@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "bg-accent-500 text-white shadow-soft hover:-translate-y-0.5 hover:bg-accent-400",
         secondary:
-          "border border-white/10 bg-white/10 text-white shadow-soft hover:-translate-y-0.5 hover:bg-white/20",
+          "bg-gradient-to-r from-accent-500/90 via-sunrise/80 to-emerald-500/80 text-white shadow-soft hover:-translate-y-0.5 hover:brightness-110",
         outline:
           "border border-white/20 bg-transparent text-white hover:bg-white/10",
         ghost: "text-white/70 hover:bg-white/10 hover:text-white",
