@@ -20,10 +20,12 @@ export function MobileMenu({
     <Sheet open={open} onOpenChange={(value) => !value && onClose()}>
       <SheetContent
         side="right"
-        className="border-white/10 bg-[#0b0c10] text-white"
+        className="border-white/10 bg-white text-slate-900 dark:bg-[#0b0c10] dark:text-white"
       >
         <SheetHeader className="text-right">
-          <SheetTitle className="text-white">{t("brand_name")}</SheetTitle>
+          <SheetTitle className="text-slate-900 dark:text-white">
+            {t("brand_name")}
+          </SheetTitle>
         </SheetHeader>
         <nav className="mt-8 flex flex-col gap-3">
           {navLinks.map((link) => (
@@ -33,8 +35,8 @@ export function MobileMenu({
               onClick={onClose}
               className={`rounded-2xl px-4 py-3 text-sm transition ${
                 pathname === link.href
-                  ? "bg-white/10 text-white"
-                  : "text-white/70 hover:bg-white/5 hover:text-white"
+                  ? "bg-slate-100 text-slate-900 dark:bg-white/10 dark:text-white"
+                  : "text-slate-700 hover:bg-slate-100 hover:text-slate-900 dark:text-white/70 dark:hover:bg-white/5 dark:hover:text-white"
               }`}
             >
               {t(link.key)}
