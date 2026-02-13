@@ -30,3 +30,6 @@ yarn-error.log*
 
 # cache
 .npm-cache/
+
+# local scratch project
+ahmed-study-hub/

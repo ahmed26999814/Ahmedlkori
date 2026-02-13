@@ -5,6 +5,7 @@ import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SpotlightCard } from "@/components/spotlight-card";
 import { useContent } from "@/components/providers/content-provider";
 import { useLang } from "@/components/providers/language-provider";
@@ -37,28 +38,15 @@ export default function ReviewsPage() {
 
       <div className="flex flex-wrap items-center gap-3">
         <Badge tone="accent">{t("reviews_level")}</Badge>
-        <div className="flex gap-2">
-          <button
-            onClick={() => setSemester("S1")}
-            className={`rounded-full px-5 py-2 text-sm transition ${
-              semester === "S1"
-                ? "bg-accent-500 text-white"
-                : "bg-white/5 text-white/60 hover:bg-white/10"
-            }`}
-          >
-            {t("reviews_semester_s1")}
-          </button>
-          <button
-            onClick={() => setSemester("S2")}
-            className={`rounded-full px-5 py-2 text-sm transition ${
-              semester === "S2"
-                ? "bg-accent-500 text-white"
-                : "bg-white/5 text-white/60 hover:bg-white/10"
-            }`}
-          >
-            {t("reviews_semester_s2")}
-          </button>
-        </div>
+        <Tabs
+          value={semester}
+          onValueChange={(value) => setSemester(value as "S1" | "S2")}
+        >
+          <TabsList>
+            <TabsTrigger value="S1">{t("reviews_semester_s1")}</TabsTrigger>
+            <TabsTrigger value="S2">{t("reviews_semester_s2")}</TabsTrigger>
+          </TabsList>
+        </Tabs>
       </div>
 
       {grouped.length ? (
