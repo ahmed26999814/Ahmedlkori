@@ -21,16 +21,16 @@ export function AnimatedBackground() {
     };
   }, []);
 
-  const options = React.useMemo(
-    () => ({
-      background: { color: { value: "transparent" } },
-      fullScreen: { enable: false },
-      fpsLimit: 60,
-      particles: {
-        color: { value: ["#1f9d55", "#c7b445"] },
+      const options = React.useMemo(
+        () => ({
+          background: { color: { value: "transparent" } },
+          fullScreen: { enable: false },
+          fpsLimit: 60,
+          particles: {
+        color: { value: ["#1f8f39", "#9bbd41"] },
         links: {
           enable: true,
-          color: "#1f9d55",
+          color: "#1f8f39",
           opacity: 0.25,
           distance: 120
         },
@@ -76,7 +76,7 @@ export function AnimatedBackground() {
       {ready && !reduceMotion ? (
         <Particles className="absolute inset-0" options={options as any} />
       ) : null}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(56,189,248,0.12),transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(31,143,57,0.12),transparent_55%)]" />
       <div className="absolute -left-24 top-1/3 h-64 w-64 rounded-full bg-accent-500/20 blur-[90px]" />
       <div className="absolute -right-24 bottom-10 h-64 w-64 rounded-full bg-rose/20 blur-[90px]" />
     </div>

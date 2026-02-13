@@ -4,25 +4,25 @@
 
 :root {
   color-scheme: dark;
-  --background: 220 20% 6%;
-  --foreground: 210 40% 98%;
-  --card: 220 20% 10%;
+  --background: 150 30% 6%;
+  --foreground: 120 30% 98%;
+  --card: 150 28% 10%;
   --card-foreground: 210 40% 98%;
-  --popover: 220 20% 8%;
+  --popover: 150 24% 8%;
   --popover-foreground: 210 40% 98%;
-  --primary: 142 60% 35%;
+  --primary: 140 65% 32%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 220 16% 16%;
+  --secondary: 150 14% 16%;
   --secondary-foreground: 210 40% 96%;
-  --muted: 220 16% 16%;
-  --muted-foreground: 215 20% 65%;
-  --accent: 142 60% 35%;
+  --muted: 150 16% 16%;
+  --muted-foreground: 145 14% 65%;
+  --accent: 140 65% 32%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 10% 20%;
-  --input: 220 10% 20%;
-  --ring: 142 60% 35%;
+  --border: 150 10% 20%;
+  --input: 150 10% 20%;
+  --ring: 140 65% 32%;
   --radius: 16px;
 }
 
@@ -47,24 +47,24 @@ button {
 html.light {
   color-scheme: light;
   --background: 0 0% 100%;
-  --foreground: 220 20% 10%;
+  --foreground: 140 28% 16%;
   --card: 0 0% 100%;
-  --card-foreground: 220 20% 12%;
+  --card-foreground: 140 24% 18%;
   --popover: 0 0% 100%;
-  --popover-foreground: 220 20% 12%;
-  --primary: 142 60% 35%;
+  --popover-foreground: 140 24% 18%;
+  --primary: 140 65% 32%;
   --primary-foreground: 0 0% 100%;
-  --secondary: 220 14% 96%;
-  --secondary-foreground: 220 20% 20%;
-  --muted: 220 14% 96%;
-  --muted-foreground: 220 12% 45%;
-  --accent: 142 60% 35%;
+  --secondary: 120 20% 96%;
+  --secondary-foreground: 140 22% 22%;
+  --muted: 120 20% 96%;
+  --muted-foreground: 140 18% 45%;
+  --accent: 140 65% 32%;
   --accent-foreground: 0 0% 100%;
   --destructive: 0 72% 51%;
   --destructive-foreground: 0 0% 100%;
-  --border: 220 12% 88%;
-  --input: 220 12% 88%;
-  --ring: 142 60% 35%;
+  --border: 140 18% 88%;
+  --input: 140 18% 88%;
+  --ring: 140 65% 32%;
 }
 
 html.light body {
@@ -139,8 +139,8 @@ html.light .text-white\/90 .text-white {
 
 html.light .bg-hero-gradient {
   background-image:
-    radial-gradient(1200px circle at 90% 10%, rgba(31, 157, 85, 0.2), transparent 60%),
-    radial-gradient(900px circle at 10% 20%, rgba(199, 180, 69, 0.16), transparent 55%),
+    radial-gradient(1200px circle at 90% 10%, rgba(31, 143, 57, 0.18), transparent 60%),
+    radial-gradient(900px circle at 10% 20%, rgba(155, 189, 65, 0.18), transparent 55%),
     linear-gradient(135deg, rgba(248, 250, 252, 0.9), rgba(241, 245, 249, 0.95));
 }
 
@@ -179,7 +179,7 @@ html.light textarea::placeholder {
 }
 
 ::selection {
-  background: rgba(31, 157, 85, 0.3);
+  background: rgba(31, 143, 57, 0.3);
   color: #fff;
 }
 
