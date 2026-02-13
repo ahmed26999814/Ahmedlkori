@@ -5,8 +5,6 @@ import { ExternalLink } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import { SpotlightCard } from "@/components/spotlight-card";
-import { FeaturedCarousel } from "@/components/featured-carousel";
-import { QrDialog } from "@/components/qr-dialog";
 import { useContent } from "@/components/providers/content-provider";
 import { useLang } from "@/components/providers/language-provider";
 
@@ -14,10 +12,6 @@ export default function SummariesPage() {
   const { summaries } = useContent();
   const { t, lang } = useLang();
 
-  const featured = React.useMemo(
-    () => summaries.filter((item) => item.featured),
-    [summaries]
-  );
 
   const groupedByTerm = React.useMemo(() => {
     const terms = [
@@ -48,8 +42,6 @@ export default function SummariesPage() {
     <div className="space-y-8">
       <PageHeader title={t("summaries_title")} description={t("summaries_desc")} />
 
-      {featured.length ? <FeaturedCarousel items={featured} /> : null}
-
       {groupedByTerm.some((term) => term.subjects.length) ? (
         <div className="space-y-8">
           {groupedByTerm.map((termGroup) =>
@@ -74,14 +66,11 @@ export default function SummariesPage() {
                       <div className="flex flex-wrap gap-2">
                         {group.files.map((item) =>
                           item.url ? (
-                            <div key={item.title} className="flex items-center gap-2">
-                              <Button asChild variant="secondary" size="sm">
-                                <a href={item.url}>
-                                  {item.title} <ExternalLink size={14} />
-                                </a>
-                              </Button>
-                              <QrDialog url={item.url} />
-                            </div>
+                            <Button key={item.title} asChild variant="secondary" size="sm">
+                              <a href={item.url}>
+                                {item.title} <ExternalLink size={14} />
+                              </a>
+                            </Button>
                           ) : (
                             <Button key={item.title} variant="outline" size="sm" disabled>
                               {lang === "fr" ? "Bientôt" : "قريبًا"}

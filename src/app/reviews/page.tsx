@@ -7,7 +7,6 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SpotlightCard } from "@/components/spotlight-card";
-import { QrDialog } from "@/components/qr-dialog";
 import { useContent } from "@/components/providers/content-provider";
 import { useLang } from "@/components/providers/language-provider";
 
@@ -65,14 +64,11 @@ export default function ReviewsPage() {
               <div className="flex flex-wrap gap-2">
                 {group.links.map((item) =>
                   item.url ? (
-                    <div key={item.title} className="flex items-center gap-2">
-                      <Button asChild variant="secondary" size="sm">
-                        <a href={item.url}>
-                          {item.yearLabel} <ExternalLink size={14} />
-                        </a>
-                      </Button>
-                      <QrDialog url={item.url} />
-                    </div>
+                    <Button key={item.title} asChild variant="secondary" size="sm">
+                      <a href={item.url}>
+                        {item.yearLabel} <ExternalLink size={14} />
+                      </a>
+                    </Button>
                   ) : (
                     <Button key={item.title} variant="outline" size="sm" disabled>
                       {t("reviews_coming")}
@@ -103,14 +99,11 @@ export default function ReviewsPage() {
                 {t("reviews_whatsapp_desc")}
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Button asChild variant="secondary">
-                <a href={whatsappGroups[0].url}>
-                  {t("reviews_open")}
-                </a>
-              </Button>
-              <QrDialog url={whatsappGroups[0].url} />
-            </div>
+            <Button asChild variant="secondary">
+              <a href={whatsappGroups[0].url}>
+                {t("reviews_open")}
+              </a>
+            </Button>
           </SpotlightCard>
         </section>
       ) : null}
