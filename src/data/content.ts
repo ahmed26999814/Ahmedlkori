@@ -81,8 +81,8 @@ export const telegramReviews: TelegramReview[] = [
     yearLabel: "قريبًا"
   },
   {
-    title: "Biologie cellulaire (S2) — قريبًا",
-    subject: "Biologie cellulaire",
+    title: "Biologie cellulaire 2 (S2) — قريبًا",
+    subject: "Biologie cellulaire 2",
     url: "",
     tags: ["S2", "قريبًا"],
     updatedAt: "2026-02-12",
@@ -137,7 +137,7 @@ export const summaries: SummaryFile[] = [
   },
   {
     title: "ملفات Biologie cellulaire 2 (S2) — مجلد",
-    subject: "Biologie cellulaire",
+    subject: "Biologie cellulaire 2",
     type: "folder",
     url: "https://drive.google.com/drive/folders/19PeyM3kYgnV03Vt58kM26o2yHzrX-vQA",
     size: "Google Drive",
