@@ -71,36 +71,77 @@ export const telegramReviews: TelegramReview[] = [
     yearLabel: "2025-2026"
   },
   {
-    title: "Découverte de la biologie — قريبًا",
+    title: "Découverte de la biologie — 2024-2025",
     subject: "Découverte de la biologie",
-    url: "",
-    tags: ["S1", "قريبًا"],
-    updatedAt: "2026-02-12",
+    url: "https://t.me/+nT1RJwFG9pBlNDZk",
+    tags: ["S1"],
+    updatedAt: "2026-02-14",
     level: "L1",
     semester: "S1",
-    yearLabel: "قريبًا"
+    yearLabel: "2024-2025"
   },
   {
-    title: "Biologie cellulaire 2 (S2) — قريبًا",
+    title: "Découverte de la biologie — 2025-2026",
+    subject: "Découverte de la biologie",
+    url: "https://t.me/+U9b_jKVNMoUyMDI0",
+    tags: ["S1"],
+    updatedAt: "2026-02-14",
+    level: "L1",
+    semester: "S1",
+    yearLabel: "2025-2026"
+  },
+  {
+    title: "Embryon — 2023-2024",
+    subject: "Embryon",
+    url: "https://t.me/+-Jes6jAt7zliZmM8",
+    tags: ["S2"],
+    updatedAt: "2026-02-14",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2023-2024"
+  },
+  {
+    title: "Histologie — 2023-2024",
+    subject: "Histologie",
+    url: "https://t.me/+r9r6PCsfZ00wNmY0",
+    tags: ["S2"],
+    updatedAt: "2026-02-14",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2023-2024"
+  },
+  {
+    title: "Embryon et histologie — 2024-2025",
+    subject: "Embryon et histologie",
+    url: "https://t.me/+HAJgS_6Osb8xMDk8",
+    tags: ["S2"],
+    updatedAt: "2026-02-14",
+    level: "L1",
+    semester: "S2",
+    yearLabel: "2024-2025"
+  },
+  {
+    title: "Biologie cellulaire 2 — 2023-2024",
     subject: "Biologie cellulaire 2",
-    url: "",
-    tags: ["S2", "قريبًا"],
-    updatedAt: "2026-02-12",
+    url: "https://t.me/+md-f4w917zU1M2Jk",
+    tags: ["S2"],
+    updatedAt: "2026-02-14",
     level: "L1",
     semester: "S2",
-    yearLabel: "قريبًا"
+    yearLabel: "2023-2024"
   },
   {
-    title: "Embryologie et Histologie — قريبًا",
-    subject: "Embryologie et Histologie",
-    url: "",
-    tags: ["S2", "قريبًا"],
-    updatedAt: "2026-02-12",
+    title: "Biologie cellulaire 2 — 2024-2025",
+    subject: "Biologie cellulaire 2",
+    url: "https://t.me/+WwIhPC5S6dI4MDM0",
+    tags: ["S2"],
+    updatedAt: "2026-02-14",
     level: "L1",
     semester: "S2",
-    yearLabel: "قريبًا"
+    yearLabel: "2024-2025"
   }
 ];
+
 
 export const whatsappGroups: WhatsAppGroup[] = [
   {
